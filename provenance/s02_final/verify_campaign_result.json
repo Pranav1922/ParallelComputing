@@ -1,0 +1,52 @@
+{
+  "manifest_models": {
+    "RL-S0": "c827a9f51c512ac4",
+    "RL-S1": "e83496e27b9d4ef1",
+    "RL-S2": "1765acd48d43dfde",
+    "RL-NOHEFTFEAT": "a7781d888bca8550"
+  },
+  "power_at_start": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 90%; AC attached; not charging present: true",
+  "power_at_end": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 90%; AC attached; not charging present: true",
+  "expected_rows": 13500,
+  "actual_rows": 13500,
+  "instances": 450,
+  "status_counts": {
+    "ok": 13500
+  },
+  "rows_by_split": {
+    "test_id": 10800,
+    "test_ood": 2700
+  },
+  "rerun_mismatches_heuristics_and_rl": 0,
+  "RL_vs_HEFT_test_id_mean_rho": 1.009676063920929,
+  "RL_vs_FCFS-EAT_test_id_mean_rho": 0.8219770030234171,
+  "RL-S0_vs_HEFT_test_id_mean_rho": 0.9990283259141826,
+  "RL-S0_vs_FCFS-EAT_test_id_mean_rho": 0.8134602675478824,
+  "RL-S1_vs_HEFT_test_id_mean_rho": 1.0016517375106857,
+  "RL-S1_vs_FCFS-EAT_test_id_mean_rho": 0.8143671145596783,
+  "RL-S2_vs_HEFT_test_id_mean_rho": 1.028348128337919,
+  "RL-S2_vs_FCFS-EAT_test_id_mean_rho": 0.838103626962691,
+  "RL-NOHEFTFEAT_vs_HEFT_test_id_mean_rho": 1.0358192679870137,
+  "RL-NOHEFTFEAT_vs_FCFS-EAT_test_id_mean_rho": 0.8401057796156052,
+  "RL_vs_HEFT_test_id_wilcoxon": {
+    "n": 360,
+    "n_nonzero": 326,
+    "p": 6.8016417689349365e-06
+  },
+  "RL_vs_HEFT_test_ood_mean_rho": 1.0097393143630948,
+  "RL_vs_FCFS-EAT_test_ood_mean_rho": 0.8113985976262255,
+  "RL-S0_vs_HEFT_test_ood_mean_rho": 1.0072869882323958,
+  "RL-S0_vs_FCFS-EAT_test_ood_mean_rho": 0.8083744253885427,
+  "RL-S1_vs_HEFT_test_ood_mean_rho": 1.0005564783464724,
+  "RL-S1_vs_FCFS-EAT_test_ood_mean_rho": 0.8039615957455822,
+  "RL-S2_vs_HEFT_test_ood_mean_rho": 1.021374476510416,
+  "RL-S2_vs_FCFS-EAT_test_ood_mean_rho": 0.821859771744552,
+  "RL-NOHEFTFEAT_vs_HEFT_test_ood_mean_rho": 1.0359765143575053,
+  "RL-NOHEFTFEAT_vs_FCFS-EAT_test_ood_mean_rho": 0.8259077063516492,
+  "RL_vs_HEFT_test_ood_wilcoxon": {
+    "n": 90,
+    "n_nonzero": 80,
+    "p": 0.07755810431516462
+  },
+  "problems": []
+}

@@ -1,0 +1,124 @@
+{
+  "model_id": "6d83fac40cb5c6ed",
+  "extension_of": "820ba281844c513e",
+  "trigger": {
+    "rule": "val SBS-VBS gap < 2% (ALGORITHM_DESIGN 5.7)",
+    "val_sbs_vbs_gap": 0.006627098572710809,
+    "triggered": true
+  },
+  "ga_member": "GA-1000",
+  "ga_settings": {
+    "population": 60,
+    "max_evals": 1000,
+    "tournament": 3,
+    "crossover_prob": 0.9,
+    "key_sigma": 0.15,
+    "mutations_per_chromosome": 1.0,
+    "elite": 2,
+    "seed_heuristics": [
+      "HEFT",
+      "MINMIN",
+      "FCFS-EAT"
+    ]
+  },
+  "thetas": [
+    0.0,
+    0.005,
+    0.01,
+    0.02,
+    0.05
+  ],
+  "theta": 0.02,
+  "theta_table": {
+    "0.0": {
+      "depth": 4,
+      "train_ga_labels": 416,
+      "val_ga_labels": 62,
+      "val_ga_calls": 67,
+      "val_mean_regret_vs_vbs6": -0.002159182427895204,
+      "ga_call_efficiency": 0.00013113852239710468,
+      "val_regret_by_depth": {
+        "1": 0.003936432872816306,
+        "2": 0.002464621073048333,
+        "3": 0.002784485804845243,
+        "4": 0.002420423427054762
+      }
+    },
+    "0.005": {
+      "depth": 3,
+      "train_ga_labels": 171,
+      "val_ga_labels": 26,
+      "val_ga_calls": 29,
+      "val_mean_regret_vs_vbs6": -0.000992814769770845,
+      "ga_call_efficiency": 0.0002627556324993674,
+      "val_regret_by_depth": {
+        "1": 0.0036729552097250246,
+        "2": 0.0035874977456820537,
+        "3": 0.0033397194863445086,
+        "4": 0.0047792144768993945
+      }
+    },
+    "0.01": {
+      "depth": 1,
+      "train_ga_labels": 125,
+      "val_ga_labels": 21,
+      "val_ga_calls": 31,
+      "val_mean_regret_vs_vbs6": -0.0006595986270541198,
+      "ga_call_efficiency": 0.00023505474837951383,
+      "val_regret_by_depth": {
+        "1": 0.0034751778916644696,
+        "2": 0.009447229023406405,
+        "3": 0.00613260671754601,
+        "4": 0.005749764859505288
+      }
+    },
+    "0.02": {
+      "depth": 4,
+      "train_ga_labels": 87,
+      "val_ga_labels": 15,
+      "val_ga_calls": 14,
+      "val_mean_regret_vs_vbs6": 0.001962366872604256,
+      "ga_call_efficiency": 0.00033319512143618234,
+      "val_regret_by_depth": {
+        "1": 0.010657430852991258,
+        "2": 0.005861584171055085,
+        "3": 0.007139700675760474,
+        "4": 0.005789418050812301
+      }
+    },
+    "0.05": {
+      "depth": 2,
+      "train_ga_labels": 32,
+      "val_ga_labels": 3,
+      "val_ga_calls": 0,
+      "val_mean_regret_vs_vbs6": 0.005424995012642314,
+      "ga_call_efficiency": null,
+      "val_regret_by_depth": {
+        "1": 0.00839083482703743,
+        "2": 0.007188731266968935,
+        "3": 0.01384703233469098,
+        "4": 0.013079762358722383
+      }
+    }
+  },
+  "sbs": "HEFT",
+  "val_sbs_regret_vs_vbs6": 0.006627098572710809,
+  "val_ga_gain_over_best_heuristic": {
+    "mean": 0.0034603591876946455,
+    "share_strictly_better": 0.3111111111111111
+  },
+  "rules": "|--- het_machine <= 0.40\n|   |--- work_skew <= 0.63\n|   |   |--- het_machine <= 0.18\n|   |   |   |--- work_skew <= 0.52\n|   |   |   |   |--- class: 4\n|   |   |   |--- work_skew >  0.52\n|   |   |   |   |--- class: 0\n|   |   |--- het_machine >  0.18\n|   |   |   |--- par_ratio <= 2.34\n|   |   |   |   |--- class: 6\n|   |   |   |--- par_ratio >  2.34\n|   |   |   |   |--- class: 5\n|   |--- work_skew >  0.63\n|   |   |--- het_machine <= 0.38\n|   |   |   |--- cp_ratio <= 0.55\n|   |   |   |   |--- class: 4\n|   |   |   |--- cp_ratio >  0.55\n|   |   |   |   |--- class: 4\n|   |   |--- het_machine >  0.38\n|   |   |   |--- het_machine <= 0.38\n|   |   |   |   |--- class: 6\n|   |   |   |--- het_machine >  0.38\n|   |   |   |   |--- class: 4\n|--- het_machine >  0.40\n|   |--- work_skew <= 2.06\n|   |   |--- het_affinity <= 0.10\n|   |   |   |--- edge_density <= 2.06\n|   |   |   |   |--- class: 6\n|   |   |   |--- edge_density >  2.06\n|   |   |   |   |--- class: 1\n|   |   |--- het_affinity >  0.10\n|   |   |   |--- edge_density <= 1.72\n|   |   |   |   |--- class: 6\n|   |   |   |--- edge_density >  1.72\n|   |   |   |   |--- class: 4\n|   |--- work_skew >  2.06\n|   |   |--- edge_density <= 1.24\n|   |   |   |--- het_machine <= 0.60\n|   |   |   |   |--- class: 6\n|   |   |   |--- het_machine >  0.60\n|   |   |   |   |--- class: 1\n|   |   |--- edge_density >  1.24\n|   |   |   |--- work_skew <= 5.85\n|   |   |   |   |--- class: 4\n|   |   |   |--- work_skew >  5.85\n|   |   |   |   |--- class: 1\n",
+  "class_names": [
+    "FCFS-EAT",
+    "FCFS-EFT",
+    "LPT-EFT",
+    "SPT-EFT",
+    "HEFT",
+    "MINMIN",
+    "GA-1000"
+  ],
+  "measured": {
+    "ga_time_s_median_train": 0.08941568748559803,
+    "ga_time_s_median_val": 0.08926783347851597
+  }
+}

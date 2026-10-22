@@ -1,0 +1,9 @@
+# Identifiers for the manual's Student_ID / Batch_ID columns. Placeholders: do not guess.
+# Replace only when confirmed for this CS 15 submission. Read by `analyze`, never written into raw data.
+batch_id = "BATCH_ID_UNCONFIRMED"
+
+[student_id]
+BASE = "STUDENT_ID_UNCONFIRMED"
+S01 = "STUDENT_ID_UNCONFIRMED"
+S02 = "STUDENT_ID_UNCONFIRMED"
+S03 = "STUDENT_ID_UNCONFIRMED"

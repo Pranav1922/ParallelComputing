@@ -1,0 +1,125 @@
+{
+  "campaign_id": "20261017T044734Z-s01_final-430d8a10",
+  "config_file": "configs/s01_final.toml",
+  "config": {
+    "campaign": {
+      "name": "s01_final",
+      "seed": 20261011,
+      "workers": 1,
+      "notes": "single worker; host on battery power at launch (macOS power state recorded by operator)"
+    },
+    "workload": {
+      "sizes": [
+        50,
+        100,
+        200
+      ],
+      "processors": [
+        2,
+        4,
+        8
+      ],
+      "classes": [
+        "regular",
+        "irregular",
+        "heterogeneous",
+        "irregular_hetero"
+      ],
+      "instances": {
+        "train": 30,
+        "val": 5,
+        "test_id": 10,
+        "test_ood": 10
+      },
+      "ood": [
+        "ood_size",
+        "ood_procs",
+        "ood_struct",
+        "ood_cv"
+      ]
+    },
+    "run": {
+      "splits": [
+        "test_id",
+        "test_ood"
+      ],
+      "algorithms": [
+        "FCFS-EAT",
+        "FCFS-EFT",
+        "SPT-EFT",
+        "LPT-EFT",
+        "HEFT",
+        "MINMIN",
+        "GA",
+        "GA-UNSEEDED",
+        "GA-KEYS-EFT",
+        "RANDOM-SEARCH",
+        "HILL-CLIMB"
+      ],
+      "timing_repeats": 3,
+      "timeout_s": 600
+    },
+    "ga": {
+      "population": 60,
+      "max_evals": 6000,
+      "tournament": 3,
+      "crossover_prob": 0.9,
+      "key_sigma": 0.15,
+      "mutations_per_chromosome": 1.0,
+      "elite": 2,
+      "seed_heuristics": [
+        "HEFT",
+        "MINMIN",
+        "FCFS-EAT"
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "config_hash": "430d8a10",
+  "code_hash": "9a1f83786ce9df0b",
+  "git_commit": null,
+  "git_dirty": null,
+  "started_utc": "2026-10-17T04:47:34.198571+00:00",
+  "finished_utc": "2026-10-17T06:46:01.101732+00:00",
+  "hardware": {
+    "Apple_M4-10c-16GB": {
+      "cpu": "Apple M4",
+      "physical_cores": 10,
+      "ram_bytes": 17179869184,
+      "gpu": null,
+      "os": "macOS-27.2-arm64-arm-64bit",
+      "machine": "arm64"
+    }
+  },
+  "software": {
+    "python": "3.12.9 (v3.12.9:fdb81425a9a, Feb  4 2025, 12:21:36) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0",
+    "matplotlib": "3.10.8",
+    "pandas": "3.0.2",
+    "pytest": "9.1.1"
+  },
+  "runtime": {
+    "workers": 1,
+    "threads": 1,
+    "PYTHONHASHSEED": "unset"
+  },
+  "models": [],
+  "notes": "single worker; host on battery power at launch (macOS power state recorded by operator)",
+  "split_counts": {
+    "train": 1080,
+    "val": 180,
+    "test_id": 360,
+    "test_ood": 90
+  },
+  "separation_checked": true,
+  "row_count": 14850,
+  "failed_count": 0,
+  "wall_time_s": 7106.244007583009
+}

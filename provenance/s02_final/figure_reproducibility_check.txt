@@ -1,0 +1,6 @@
+G1: 450 plotted points recomputed from source CSV -> MATCH
+G5: 22 plotted points recomputed from source CSV -> MATCH
+G6: 40 plotted points recomputed from source CSV -> MATCH
+G4: training curves equal the four models' training_log.csv -> MATCH
+G6 per-instance rho equals master.csv makespans -> MATCH
+ALL S02 FINAL FIGURE CHECKS: PASS

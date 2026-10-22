@@ -1,0 +1,19 @@
+# Heuristics-only pilot (EXPERIMENTAL_METHODOLOGY.md 6). Uses the val split: the test split is not touched.
+[campaign]
+name = "pilot"
+seed = 20261011
+workers = 1
+notes = ""
+
+[workload]
+sizes = [20, 50]
+processors = [2, 4]
+classes = ["regular", "irregular_hetero"]
+instances = { train = 3, val = 3 }   # per cell; train is generated only to check split separation
+ood = []
+
+[run]
+splits = ["val"]
+algorithms = ["FCFS-EAT", "FCFS-EFT", "SPT-EFT", "LPT-EFT", "HEFT", "MINMIN"]
+timing_repeats = 3
+timeout_s = 60

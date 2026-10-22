@@ -1,0 +1,49 @@
+{
+  "model_id": "820ba281844c513e",
+  "train_instances": 1080,
+  "val_instances": 180,
+  "depth": 2,
+  "val_mean_regret_by_depth": {
+    "1": 0.006627098572710809,
+    "2": 0.005258032893530772,
+    "3": 0.010391202280744537,
+    "4": 0.011280718702172123,
+    "unlimited": 0.021113911098652655
+  },
+  "val_mean_regret_feature_ablation": {
+    "without_structure": 0.005258032893530772,
+    "without_work": 0.005298219711580716,
+    "without_heterogeneity": 0.006627098572710809
+  },
+  "val_mean_regret_adaptive": 0.005258032893530772,
+  "sbs": "HEFT",
+  "val_mean_cmax_over_lb": {
+    "FCFS-EAT": 1.6084845421870828,
+    "FCFS-EFT": 1.2539919715178722,
+    "LPT-EFT": 1.307152342862171,
+    "SPT-EFT": 1.4817526311323383,
+    "HEFT": 1.1765112144907135,
+    "MINMIN": 1.3931671568921464
+  },
+  "val_sbs_vbs_gap": 0.006627098572710809,
+  "contingency_threshold": 0.02,
+  "contingency_triggered": true,
+  "train_label_counts": {
+    "FCFS-EAT": 137,
+    "FCFS-EFT": 68,
+    "LPT-EFT": 37,
+    "SPT-EFT": 5,
+    "HEFT": 763,
+    "MINMIN": 70
+  },
+  "val_label_counts": {
+    "FCFS-EAT": 28,
+    "FCFS-EFT": 14,
+    "LPT-EFT": 8,
+    "SPT-EFT": 0,
+    "HEFT": 121,
+    "MINMIN": 9
+  },
+  "guard_margin": 0.1,
+  "rules": "|--- het_machine <= 0.48\n|   |--- work_skew <= 0.61\n|   |   |--- class: 4\n|   |--- work_skew >  0.61\n|   |   |--- class: 4\n|--- het_machine >  0.48\n|   |--- work_cv <= 0.63\n|   |   |--- class: 5\n|   |--- work_cv >  0.63\n|   |   |--- class: 4\n"
+}

@@ -1,0 +1,2 @@
+2026-10-17 10:17:34,763 INFO split separation verified: {'train': 1080, 'val': 180, 'test_id': 360, 'test_ood': 90}
+2026-10-17 12:16:01,104 INFO finished: 14850 rows, 0 not ok

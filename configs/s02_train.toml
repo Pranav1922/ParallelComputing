@@ -1,0 +1,15 @@
+# S02 full training (docs/S02_IMPLEMENTATION_PLAN.md 3, 11): the predeclared settings of rl.SETTINGS with NO
+# overrides (3,000 updates or 45 min per run, validation every 100 updates on the real `val` split). Used only by
+# `train-rl`; no campaign is run from this file. [workload] and seed equal full.toml.
+#   RL-S0, RL-S1, RL-S2:  --seed 0 / 1 / 2            -> results/models/s02_rl_seed{0,1,2}
+#   RL-NOHEFTFEAT:        --seed 0 --ablation          -> results/models/s02_rl_noheftfeat_seed0
+[campaign]
+name = "s02_train"
+seed = 20261011
+
+[workload]
+sizes = [50, 100, 200]
+processors = [2, 4, 8]
+classes = ["regular", "irregular", "heterogeneous", "irregular_hetero"]
+instances = { train = 30, val = 5, test_id = 10, test_ood = 10 }   # per cell
+ood = ["ood_size", "ood_procs", "ood_struct", "ood_cv"]

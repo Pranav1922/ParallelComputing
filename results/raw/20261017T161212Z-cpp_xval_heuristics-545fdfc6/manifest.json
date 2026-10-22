@@ -1,0 +1,37 @@
+{
+ "kind": "cpp_xval_heuristics",
+ "created_utc": "20261017T161212Z",
+ "config": "configs/s01_final.toml",
+ "config_sha256": "550007b6e5dd4a0444393e8543909d103c27bac80fbb953c7f68b6b1b239a8e5",
+ "splits": [
+  "test_id",
+  "test_ood"
+ ],
+ "campaigns_read": [
+  "results/raw/20261017T044734Z-s01_final-430d8a10",
+  "results/raw/20261017T083329Z-s03_final-b8e5be9a",
+  "results/raw/20261017T115054Z-s02_final-898ee9e1"
+ ],
+ "campaign_runs_sha256": {
+  "20261017T044734Z-s01_final-430d8a10": "9a4a6afe437571462e5b0a1f3f20358724ee9d9b321905e37446d57b1c3d8b36",
+  "20261017T083329Z-s03_final-b8e5be9a": "2ea1471edfbbeb38f9df733c70a452a392da373f83d4282d0db94935102003b3",
+  "20261017T115054Z-s02_final-898ee9e1": "397fc1f2f1cb13e8ca137607b179587c0b79d64203f658b734c091472ade02ec"
+ },
+ "schedsim_binary": "cpp/build/schedsim",
+ "schedsim_sha256": "719f78c47036ffeec61f84674512c03bd62b1d8777b80a00913967c79bc02849",
+ "schedsim_version": "schedsim 1 (g++-15 (Homebrew GCC 15.2.0) 15.2.0; -O2 -std=c++17 -Wall -Wextra -Wno-psabi -ffp-contract=off -fno-fast-math)",
+ "interop_sha256": "bb51c5f1936a01d855aff4ff7e655da4553eb3138d00d640b053c61c4d2be582",
+ "note": "Read-only comparison; accepted campaigns are inputs and are not modified. Times are sim_tu.",
+ "summary": {
+  "instances": 450,
+  "comparisons": 5400,
+  "arrays_identical": 5400,
+  "bounds_equal": 5400,
+  "accepted_rows_compared": 24300,
+  "insert_comparisons_with_accepted_rows": 2700,
+  "accepted_makespan_equal": 2700,
+  "accepted_bounds_equal": 2700,
+  "mismatches": [],
+  "elapsed_s": 12.4
+ }
+}

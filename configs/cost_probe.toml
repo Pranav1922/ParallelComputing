@@ -1,0 +1,19 @@
+# Cost probe: heuristic scheduling time at full-campaign sizes, one val instance per cell. Not an experiment.
+[campaign]
+name = "cost_probe"
+seed = 20261011
+workers = 1
+notes = ""
+
+[workload]
+sizes = [100, 200, 400]
+processors = [4, 8]
+classes = ["regular", "irregular_hetero"]
+instances = { val = 1 }
+ood = []
+
+[run]
+splits = ["val"]
+algorithms = ["FCFS-EAT", "FCFS-EFT", "SPT-EFT", "LPT-EFT", "HEFT", "MINMIN"]
+timing_repeats = 3
+timeout_s = 60

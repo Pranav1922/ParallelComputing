@@ -1,0 +1,31 @@
+# S02 pilot (docs/S02_IMPLEMENTATION_PLAN.md 7). Training: seed 0, the real training stream (train split, indices
+# >= 1000, the 36 in-distribution cells), predeclared REINFORCE settings except the pilot's length: 300 updates or
+# 15 minutes, validation every 50 updates on the real `val` split (180). Campaign: heuristics + RL-PILOT on `val`
+# only (in-sample for checkpoint selection: development diagnostics, not results). No test split is touched.
+# [workload] and seed equal full.toml.
+[campaign]
+name = "s02_pilot"
+seed = 20261011
+workers = 1
+notes = ""
+
+[workload]
+sizes = [50, 100, 200]
+processors = [2, 4, 8]
+classes = ["regular", "irregular", "heterogeneous", "irregular_hetero"]
+instances = { train = 30, val = 5, test_id = 10, test_ood = 10 }   # per cell
+ood = ["ood_size", "ood_procs", "ood_struct", "ood_cv"]
+
+[s02_train]          # only the pilot-length keys differ from rl.SETTINGS (tests/test_rl.py checks this)
+max_updates = 300
+time_cap_s = 900.0
+val_every = 50
+
+[run]
+splits = ["val"]
+algorithms = ["FCFS-EAT", "FCFS-EFT", "SPT-EFT", "LPT-EFT", "HEFT", "MINMIN", "RL-PILOT"]
+timing_repeats = 3
+timeout_s = 600
+
+[s02]
+models = { "RL-PILOT" = "results/models/s02_pilot_seed0" }

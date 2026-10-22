@@ -1,0 +1,328 @@
+{
+  "campaign_id": "20261017T115054Z-s02_final-898ee9e1",
+  "config_file": "configs/s02_final.toml",
+  "config": {
+    "campaign": {
+      "name": "s02_final",
+      "seed": 20261011,
+      "workers": 1,
+      "notes": "single worker; power source recorded automatically in the manifest (power_at_start / power_at_end)"
+    },
+    "workload": {
+      "sizes": [
+        50,
+        100,
+        200
+      ],
+      "processors": [
+        2,
+        4,
+        8
+      ],
+      "classes": [
+        "regular",
+        "irregular",
+        "heterogeneous",
+        "irregular_hetero"
+      ],
+      "instances": {
+        "train": 30,
+        "val": 5,
+        "test_id": 10,
+        "test_ood": 10
+      },
+      "ood": [
+        "ood_size",
+        "ood_procs",
+        "ood_struct",
+        "ood_cv"
+      ]
+    },
+    "run": {
+      "splits": [
+        "test_id",
+        "test_ood"
+      ],
+      "algorithms": [
+        "FCFS-EAT",
+        "FCFS-EFT",
+        "SPT-EFT",
+        "LPT-EFT",
+        "HEFT",
+        "MINMIN",
+        "RL-S0",
+        "RL-S1",
+        "RL-S2",
+        "RL-NOHEFTFEAT"
+      ],
+      "timing_repeats": 3,
+      "timeout_s": 600
+    },
+    "s02": {
+      "models": {
+        "RL-S0": "results/models/s02_rl_seed0",
+        "RL-S1": "results/models/s02_rl_seed1",
+        "RL-S2": "results/models/s02_rl_seed2",
+        "RL-NOHEFTFEAT": "results/models/s02_rl_noheftfeat_seed0"
+      },
+      "model_ids": {
+        "RL-S0": "c827a9f51c512ac4",
+        "RL-S1": "e83496e27b9d4ef1",
+        "RL-S2": "1765acd48d43dfde",
+        "RL-NOHEFTFEAT": "a7781d888bca8550"
+      }
+    }
+  },
+  "config_hash": "898ee9e1",
+  "code_hash": "939d930e96cebafe",
+  "git_commit": null,
+  "git_dirty": null,
+  "started_utc": "2026-10-17T11:50:54.776926+00:00",
+  "finished_utc": "2026-10-17T11:52:15.737952+00:00",
+  "hardware": {
+    "Apple_M4-10c-16GB": {
+      "cpu": "Apple M4",
+      "physical_cores": 10,
+      "power_at_start": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 90%; AC attached; not charging present: true",
+      "ram_bytes": 17179869184,
+      "gpu": null,
+      "os": "macOS-27.2-arm64-arm-64bit",
+      "machine": "arm64"
+    }
+  },
+  "software": {
+    "python": "3.12.9 (v3.12.9:fdb81425a9a, Feb  4 2025, 12:21:36) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0",
+    "matplotlib": "3.10.8",
+    "pandas": "3.0.2",
+    "pytest": "9.1.1"
+  },
+  "runtime": {
+    "workers": 1,
+    "threads": 1,
+    "PYTHONHASHSEED": "unset"
+  },
+  "models": [
+    {
+      "model_id": "c827a9f51c512ac4",
+      "path": "results/models/s02_rl_seed0",
+      "role": "RL-S0",
+      "report": {
+        "model_id": "c827a9f51c512ac4",
+        "seed": 0,
+        "ablation": false,
+        "features": [
+          "log_cost_vs_best_proc",
+          "cost_vs_task_mean",
+          "task_size",
+          "rank_u",
+          "outdegree",
+          "start_wait",
+          "finish_vs_best_candidate",
+          "idle_gap",
+          "ready_offset",
+          "fraction_placed",
+          "ready_per_proc",
+          "load_imbalance"
+        ],
+        "behaviour_cloning": false,
+        "settings": {
+          "lr": 0.0003,
+          "batch": 16,
+          "beta": 0.01,
+          "clip": 1.0,
+          "max_updates": 3000,
+          "time_cap_s": 2700.0,
+          "val_every": 100,
+          "hidden": 64,
+          "stream_seed": 20261017,
+          "stream_offset": 1000,
+          "bc_updates": 200
+        },
+        "insert": true,
+        "updates_done": 3000,
+        "stop_reason": "max_updates",
+        "episodes": 48000,
+        "best_update": 1200,
+        "best_val_rho": 1.006065439005904,
+        "val_rho_update0": 5.392850332014408,
+        "learned_vs_update0": true,
+        "val_instances": 180,
+        "measured": {
+          "train_time_s": 947.1588455419987,
+          "power_at_start": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 90%; AC attached; not charging present: true",
+          "power_at_end": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 90%; AC attached; not charging present: true"
+        }
+      }
+    },
+    {
+      "model_id": "e83496e27b9d4ef1",
+      "path": "results/models/s02_rl_seed1",
+      "role": "RL-S1",
+      "report": {
+        "model_id": "e83496e27b9d4ef1",
+        "seed": 1,
+        "ablation": false,
+        "features": [
+          "log_cost_vs_best_proc",
+          "cost_vs_task_mean",
+          "task_size",
+          "rank_u",
+          "outdegree",
+          "start_wait",
+          "finish_vs_best_candidate",
+          "idle_gap",
+          "ready_offset",
+          "fraction_placed",
+          "ready_per_proc",
+          "load_imbalance"
+        ],
+        "behaviour_cloning": false,
+        "settings": {
+          "lr": 0.0003,
+          "batch": 16,
+          "beta": 0.01,
+          "clip": 1.0,
+          "max_updates": 3000,
+          "time_cap_s": 2700.0,
+          "val_every": 100,
+          "hidden": 64,
+          "stream_seed": 20261017,
+          "stream_offset": 1000,
+          "bc_updates": 200
+        },
+        "insert": true,
+        "updates_done": 3000,
+        "stop_reason": "max_updates",
+        "episodes": 48000,
+        "best_update": 2000,
+        "best_val_rho": 1.0000246890713675,
+        "val_rho_update0": 1.9163404095913885,
+        "learned_vs_update0": true,
+        "val_instances": 180,
+        "measured": {
+          "train_time_s": 959.3732374579995,
+          "power_at_start": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 90%; AC attached; not charging present: true",
+          "power_at_end": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 90%; AC attached; not charging present: true"
+        }
+      }
+    },
+    {
+      "model_id": "1765acd48d43dfde",
+      "path": "results/models/s02_rl_seed2",
+      "role": "RL-S2",
+      "report": {
+        "model_id": "1765acd48d43dfde",
+        "seed": 2,
+        "ablation": false,
+        "features": [
+          "log_cost_vs_best_proc",
+          "cost_vs_task_mean",
+          "task_size",
+          "rank_u",
+          "outdegree",
+          "start_wait",
+          "finish_vs_best_candidate",
+          "idle_gap",
+          "ready_offset",
+          "fraction_placed",
+          "ready_per_proc",
+          "load_imbalance"
+        ],
+        "behaviour_cloning": false,
+        "settings": {
+          "lr": 0.0003,
+          "batch": 16,
+          "beta": 0.01,
+          "clip": 1.0,
+          "max_updates": 3000,
+          "time_cap_s": 2700.0,
+          "val_every": 100,
+          "hidden": 64,
+          "stream_seed": 20261017,
+          "stream_offset": 1000,
+          "bc_updates": 200
+        },
+        "insert": true,
+        "updates_done": 3000,
+        "stop_reason": "max_updates",
+        "episodes": 48000,
+        "best_update": 3000,
+        "best_val_rho": 1.028698984141006,
+        "val_rho_update0": 1.2994487709145819,
+        "learned_vs_update0": true,
+        "val_instances": 180,
+        "measured": {
+          "train_time_s": 929.9501305830199,
+          "power_at_start": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 90%; AC attached; not charging present: true",
+          "power_at_end": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 90%; AC attached; not charging present: true"
+        }
+      }
+    },
+    {
+      "model_id": "a7781d888bca8550",
+      "path": "results/models/s02_rl_noheftfeat_seed0",
+      "role": "RL-NOHEFTFEAT",
+      "report": {
+        "model_id": "a7781d888bca8550",
+        "seed": 0,
+        "ablation": true,
+        "features": [
+          "log_cost_vs_best_proc",
+          "cost_vs_task_mean",
+          "task_size",
+          "outdegree",
+          "start_wait",
+          "idle_gap",
+          "ready_offset",
+          "fraction_placed",
+          "ready_per_proc",
+          "load_imbalance"
+        ],
+        "behaviour_cloning": false,
+        "settings": {
+          "lr": 0.0003,
+          "batch": 16,
+          "beta": 0.01,
+          "clip": 1.0,
+          "max_updates": 3000,
+          "time_cap_s": 2700.0,
+          "val_every": 100,
+          "hidden": 64,
+          "stream_seed": 20261017,
+          "stream_offset": 1000,
+          "bc_updates": 200
+        },
+        "insert": true,
+        "updates_done": 3000,
+        "stop_reason": "max_updates",
+        "episodes": 48000,
+        "best_update": 600,
+        "best_val_rho": 1.0352813717920688,
+        "val_rho_update0": 2.1584646161905914,
+        "learned_vs_update0": true,
+        "val_instances": 180,
+        "measured": {
+          "train_time_s": 946.6457800000207,
+          "power_at_start": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 90%; AC attached; not charging present: true",
+          "power_at_end": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 90%; AC attached; not charging present: true"
+        }
+      }
+    }
+  ],
+  "notes": "single worker; power source recorded automatically in the manifest (power_at_start / power_at_end)",
+  "split_counts": {
+    "train": 1080,
+    "val": 180,
+    "test_id": 360,
+    "test_ood": 90
+  },
+  "separation_checked": true,
+  "row_count": 13500,
+  "failed_count": 0,
+  "wall_time_s": 80.26265633304138,
+  "power_at_end": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 90%; AC attached; not charging present: true"
+}

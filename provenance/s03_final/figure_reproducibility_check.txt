@@ -1,0 +1,6 @@
+G1: 585 plotted points recomputed from source CSV -> MATCH
+G8 quality: 26 plotted points recomputed from source CSV -> MATCH
+G8 times: median and mean per method recomputed from master.csv -> MATCH
+G9: 96 cells recomputed from per-instance CSV -> MATCH
+G7: 450 points (ADAPTIVE, repeat 0) match decisions.csv features and selections -> MATCH
+ALL S03 FINAL FIGURE CHECKS: PASS

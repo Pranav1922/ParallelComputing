@@ -1,0 +1,101 @@
+{
+ "kind": "omp_calibration",
+ "host_start": {
+  "cpu": "Apple M4",
+  "physical_cores": "10",
+  "perf_cores": "4",
+  "efficiency_cores": "6",
+  "ram_bytes": "17179869184",
+  "os": "macOS-27.2-arm64-arm-64bit",
+  "power": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 88%; charging; 0:39 remaining present: true"
+ },
+ "host_end": {
+  "cpu": "Apple M4",
+  "physical_cores": "10",
+  "perf_cores": "4",
+  "efficiency_cores": "6",
+  "ram_bytes": "17179869184",
+  "os": "macOS-27.2-arm64-arm-64bit",
+  "power": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 88%; charging; 0:39 remaining present: true"
+ },
+ "ompexec_version": "ompexec 1 (g++-15 (Homebrew GCC 15.2.0) 15.2.0; -O2 -std=c++17 -Wall -Wextra -Wno-psabi -ffp-contract=off -fno-fast-math -fopenmp); _OPENMP=201511; timer CLOCK_UPTIME_RAW (ns)",
+ "ompexec_sha256": "9f75380787b1e8c00148bb13987021c4f3222e1fde02a4cbffbde3f74ec6b0fa",
+ "omp_env": {
+  "OMP_DYNAMIC": "false",
+  "OMP_MAX_ACTIVE_LEVELS": "1"
+ },
+ "reps": 30,
+ "derived": {
+  "iters_per_us": 813.0952789113305,
+  "linear_fit": {
+   "slope_s_per_iter": 1.236730335672581e-09,
+   "intercept_s": 2.726943672145172e-07,
+   "r2": 0.9996710319315285
+  },
+  "cv_by_iters": {
+   "1000": 0.014903862704776328,
+   "3000": 0.007516011733861016,
+   "10000": 0.005636733216651147,
+   "30000": 0.003205363998204404,
+   "100000": 0.00636786379884242,
+   "300000": 0.036429094597287257,
+   "1000000": 0.025676078299025885,
+   "3000000": 0.013795730038893186
+  },
+  "iters_per_tu": {
+   "10.0": 8130.952789113306,
+   "1.0": 813.0952789113305,
+   "0.1": 81.30952789113306
+  },
+  "threads": {
+   "1": {
+    "kernel_median_s_by_thread": {
+     "0": 0.001228708
+    },
+    "slowest_over_fastest": 1.0,
+    "kernel_cv": 0.027454270797266516,
+    "empty_region_median_s": 8.35e-08,
+    "empty_region_max_s": 2.92e-07
+   },
+   "2": {
+    "kernel_median_s_by_thread": {
+     "0": 0.001247208,
+     "1": 0.0012474374999999998
+    },
+    "slowest_over_fastest": 1.000184011006985,
+    "kernel_cv": 0.03682401413292342,
+    "empty_region_median_s": 8.3125e-06,
+    "empty_region_max_s": 1.1291e-05
+   },
+   "4": {
+    "kernel_median_s_by_thread": {
+     "0": 0.001390292,
+     "1": 0.0013848749999999998,
+     "2": 0.0013834165,
+     "3": 0.0013866249999999998
+    },
+    "slowest_over_fastest": 1.0049699421685372,
+    "kernel_cv": 0.027845872207971273,
+    "empty_region_median_s": 1.3521e-05,
+    "empty_region_max_s": 1.6542e-05
+   },
+   "8": {
+    "kernel_median_s_by_thread": {
+     "0": 0.002002917,
+     "1": 0.0013887915,
+     "2": 0.0019965620000000003,
+     "3": 0.001401979,
+     "4": 0.001389438,
+     "5": 0.0013884585000000001,
+     "6": 0.0019995,
+     "7": 0.0013912920000000001
+    },
+    "slowest_over_fastest": 1.4425472565438575,
+    "kernel_cv": 0.18344971325970222,
+    "empty_region_median_s": 4.7292e-05,
+    "empty_region_max_s": 7.5583e-05
+   }
+  }
+ },
+ "note": "Raw kernel timings in calibration.csv; derived values (computed from it) here. Seconds."
+}

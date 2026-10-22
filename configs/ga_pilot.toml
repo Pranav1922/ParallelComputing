@@ -1,0 +1,32 @@
+# S01 pilot on the val split: six heuristics, the GA, its two ablations and its two equal-budget controls.
+# GA settings are the predeclared starting values from ALGORITHM_DESIGN.md 3.3; nothing was tuned.
+[campaign]
+name = "ga_pilot"
+seed = 20261011
+workers = 1
+notes = ""
+
+[workload]
+sizes = [20, 50, 100]
+processors = [2, 4]
+classes = ["regular", "irregular", "heterogeneous", "irregular_hetero"]
+instances = { train = 2, val = 2 }   # per cell; train is generated only to check split separation
+ood = []
+
+[run]
+splits = ["val"]
+algorithms = ["FCFS-EAT", "FCFS-EFT", "SPT-EFT", "LPT-EFT", "HEFT", "MINMIN",
+              "GA", "GA-UNSEEDED", "GA-KEYS-EFT", "RANDOM-SEARCH", "HILL-CLIMB"]
+timing_repeats = 3
+timeout_s = 600
+
+[ga]
+population = 60
+max_evals = 6000
+tournament = 3
+crossover_prob = 0.9
+key_sigma = 0.15
+mutations_per_chromosome = 1.0
+elite = 2
+seed_heuristics = ["HEFT", "MINMIN", "FCFS-EAT"]
+seeds = [0, 1, 2]

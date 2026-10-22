@@ -1,0 +1,32 @@
+# S03 final campaign. LOCKED 2026-10-17 before any test-split evaluation; do not edit (tests/test_adaptive.py checks it).
+# Identical to the reviewed s03_pilot_ga.toml except: name, splits = test_id + test_ood, and pinned model ids.
+# Primary method: ADAPTIVE (six-heuristic selector, model 820ba281844c513e); primary comparison ADAPTIVE vs SBS on
+# test_id (EXPERIMENTAL_METHODOLOGY 7.3). Contingency extension: ADAPTIVE-GA and GA-1000 (model 6d83fac40cb5c6ed,
+# 7.4), secondary. Models were fitted on train and selected on val; nothing here is tuned on test data.
+[campaign]
+name = "s03_final"
+seed = 20261011
+workers = 1
+notes = "single worker; host power state recorded by operator at launch"
+
+[workload]
+sizes = [50, 100, 200]
+processors = [2, 4, 8]
+classes = ["regular", "irregular", "heterogeneous", "irregular_hetero"]
+instances = { train = 30, val = 5, test_id = 10, test_ood = 10 }   # per cell
+ood = ["ood_size", "ood_procs", "ood_struct", "ood_cv"]
+
+[run]
+splits = ["test_id", "test_ood"]
+algorithms = ["FCFS-EAT", "FCFS-EFT", "SPT-EFT", "LPT-EFT", "HEFT", "MINMIN",
+              "ADAPTIVE", "ADAPTIVE-TOP2", "ADAPTIVE-NOGUARD", "RANDOM-SELECT", "TRY-ALL",
+              "ADAPTIVE-GA", "GA-1000"]
+timing_repeats = 3
+timeout_s = 600
+
+[s03]
+model = "results/models/s03_selector_v1"
+model_id = "820ba281844c513e"          # runner refuses to start if the loaded model differs
+model_ga = "results/models/s03_selector_ga_v2"
+model_ga_id = "6d83fac40cb5c6ed"
+seeds = [0, 1, 2]

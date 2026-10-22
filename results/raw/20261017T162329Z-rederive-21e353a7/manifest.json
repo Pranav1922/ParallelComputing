@@ -1,0 +1,153 @@
+{
+ "kind": "rederive",
+ "created_utc": "20261017T162329Z",
+ "campaigns": {
+  "S01": {
+   "config": "configs/s01_final.toml",
+   "config_sha256": "550007b6e5dd4a0444393e8543909d103c27bac80fbb953c7f68b6b1b239a8e5",
+   "raw": "results/raw/20261017T044734Z-s01_final-430d8a10",
+   "runs_sha256": "9a4a6afe437571462e5b0a1f3f20358724ee9d9b321905e37446d57b1c3d8b36",
+   "methods": [
+    "GA",
+    "GA-UNSEEDED",
+    "GA-KEYS-EFT",
+    "RANDOM-SEARCH",
+    "HILL-CLIMB"
+   ]
+  },
+  "S02": {
+   "config": "configs/s02_final.toml",
+   "config_sha256": "077c0d336622e7c07e412d69ceaaff3031cc092521a2510ced211d5b8ddfc817",
+   "raw": "results/raw/20261017T115054Z-s02_final-898ee9e1",
+   "runs_sha256": "397fc1f2f1cb13e8ca137607b179587c0b79d64203f658b734c091472ade02ec",
+   "methods": [
+    "RL-S0",
+    "RL-S1",
+    "RL-S2",
+    "RL-NOHEFTFEAT"
+   ]
+  },
+  "S03": {
+   "config": "configs/s03_final.toml",
+   "config_sha256": "2a4698c8da4ad039aa209cfe7867deb37f86172f8d01be5d2f8e220ba45c2f40",
+   "raw": "results/raw/20261017T083329Z-s03_final-b8e5be9a",
+   "runs_sha256": "2ea1471edfbbeb38f9df733c70a452a392da373f83d4282d0db94935102003b3",
+   "methods": [
+    "ADAPTIVE",
+    "ADAPTIVE-TOP2",
+    "ADAPTIVE-NOGUARD",
+    "TRY-ALL"
+   ]
+  }
+ },
+ "code_sha256": {
+  "rederive.py": "11f1287a3de077251e03a147bc706334e9c52ed9345d07287e984600e78abef8",
+  "interop.py": "bb51c5f1936a01d855aff4ff7e655da4553eb3138d00d640b053c61c4d2be582",
+  "runner.py": "ead08c6d6ae75f53682e83c0c4d8fe238bcf51f1f8539b318411fb9c7a4d41ba",
+  "ga.py": "466a21aa67c8ba68c6d30d2813c55b2bccd8d9b1cc0ed3b9ac7263efc39d5878",
+  "rl.py": "633419618f21dec64fce1af0194b4a1a36fb555f923cb443c6e224bc72e5c67d",
+  "adaptive.py": "b3266e4419ea1ca6249fc8faf6a2f2d1a14fa80d1aa660e9820356edb9f29176",
+  "model.py": "14e30e4671b6061aec66607a4e573a542a3caf1b4ae5ebafdbbc700d33fbbed3",
+  "heuristics.py": "eb12e82b79bf33c001a0286695be85c277012cc061fe1d6268e451e7dbc54a93",
+  "workloads.py": "59c748fee82f647d895f56047887c94885c0746768ba8a6103da85b6d42079c4"
+ },
+ "schedsim_sha256": "719f78c47036ffeec61f84674512c03bd62b1d8777b80a00913967c79bc02849",
+ "schedsim_version": "schedsim 1 (g++-15 (Homebrew GCC 15.2.0) 15.2.0; -O2 -std=c++17 -Wall -Wextra -Wno-psabi -ffp-contract=off -fno-fast-math)",
+ "note": "Read-only re-derivation of accepted schedules; accepted campaigns are not modified. sim_tu, not seconds.",
+ "summary": {
+  "instances": 450,
+  "tasks": 1350,
+  "rederived_runs": 10350,
+  "accepted_rows_compared": 17550,
+  "reproduced_exactly": 10350,
+  "valid": 10350,
+  "cpp_identical": 10350,
+  "decisions_compared": 5400,
+  "decisions_equal": 5400,
+  "per_method": {
+   "S01/GA": {
+    "rederived": 1350,
+    "accepted_rows": 1350,
+    "reproduced": 1350,
+    "cpp_identical": 1350
+   },
+   "S01/GA-UNSEEDED": {
+    "rederived": 1350,
+    "accepted_rows": 1350,
+    "reproduced": 1350,
+    "cpp_identical": 1350
+   },
+   "S01/GA-KEYS-EFT": {
+    "rederived": 1350,
+    "accepted_rows": 1350,
+    "reproduced": 1350,
+    "cpp_identical": 1350
+   },
+   "S01/RANDOM-SEARCH": {
+    "rederived": 1350,
+    "accepted_rows": 1350,
+    "reproduced": 1350,
+    "cpp_identical": 1350
+   },
+   "S01/HILL-CLIMB": {
+    "rederived": 1350,
+    "accepted_rows": 1350,
+    "reproduced": 1350,
+    "cpp_identical": 1350
+   },
+   "S02/RL-S0": {
+    "rederived": 450,
+    "accepted_rows": 1350,
+    "reproduced": 450,
+    "cpp_identical": 450
+   },
+   "S02/RL-S1": {
+    "rederived": 450,
+    "accepted_rows": 1350,
+    "reproduced": 450,
+    "cpp_identical": 450
+   },
+   "S02/RL-S2": {
+    "rederived": 450,
+    "accepted_rows": 1350,
+    "reproduced": 450,
+    "cpp_identical": 450
+   },
+   "S02/RL-NOHEFTFEAT": {
+    "rederived": 450,
+    "accepted_rows": 1350,
+    "reproduced": 450,
+    "cpp_identical": 450
+   },
+   "S03/ADAPTIVE": {
+    "rederived": 450,
+    "accepted_rows": 1350,
+    "reproduced": 450,
+    "cpp_identical": 450
+   },
+   "S03/ADAPTIVE-TOP2": {
+    "rederived": 450,
+    "accepted_rows": 1350,
+    "reproduced": 450,
+    "cpp_identical": 450
+   },
+   "S03/ADAPTIVE-NOGUARD": {
+    "rederived": 450,
+    "accepted_rows": 1350,
+    "reproduced": 450,
+    "cpp_identical": 450
+   },
+   "S03/TRY-ALL": {
+    "rederived": 450,
+    "accepted_rows": 1350,
+    "reproduced": 450,
+    "cpp_identical": 450
+   }
+  },
+  "not_reproduced": [],
+  "decision_mismatches": [],
+  "elapsed_s": 2219.4,
+  "workers": 8,
+  "limit": null
+ }
+}

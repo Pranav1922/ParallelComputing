@@ -1,0 +1,11 @@
+G1: 495 plotted points recomputed from source CSV -> MATCH
+G1 per-instance CSV vs master.csv: MATCH
+G2a: 77 plotted points recomputed from source CSV -> MATCH
+G2a per-run CSV vs master.csv Scheduling_Time: MATCH
+G2b: 1200 plotted points recomputed from source CSV -> MATCH
+G2b: every one of 6750 curves ends at its run's makespan / HEFT: MATCH
+G3: 80 plotted points recomputed from source CSV -> MATCH
+ALL FIGURE CHECKS: PASS
+RANDOM-SEARCH rows equal to min of its 3 seed heuristics: 1350 of 1350
+RANDOM-SEARCH: algo seeds [np.float64(0.0), np.float64(1.0), np.float64(2.0)] (each seeds its own RNG stream via SeedSequence); identical results mean no random chromosome beat the best seed
+RANDOM-SEARCH busy_time also identical across seeds on every instance: True

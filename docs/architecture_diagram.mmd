@@ -1,0 +1,83 @@
+flowchart LR
+    CFG["configs/*.toml<br/>sizes, m, classes, algorithms,<br/>seeds, repeats, budgets"]
+
+    subgraph CORE["Shared core"]
+        WL["workloads.py<br/>DAG + cost-matrix generator<br/>train / val / test_id / test_ood seeds"]
+        MODEL["model.py<br/>Instance, Schedule"]
+        SIM["model.py: ScheduleBuilder<br/>execution simulator<br/>place(task, proc)"]
+        VAL["model.py: validate(), bounds()<br/>independent checker"]
+    end
+
+    subgraph SCHED["Schedulers: scheduler(inst, rng) -> Schedule, info"]
+        HEUR["heuristics.py<br/>FCFS-EAT, FCFS-EFT, SPT-EFT,<br/>LPT-EFT, HEFT, MINMIN"]
+        GA["ga.py (S01)<br/>GA + random-search and<br/>hill-climb controls"]
+        RL["rl.py (S02)<br/>policy network, greedy inference"]
+        AD["adaptive.py (S03)<br/>features, tree selector,<br/>novelty guard, TRY-ALL"]
+    end
+
+    subgraph TRAIN["Offline training (train and val splits only)"]
+        TRL["train-rl"]
+        TSEL["train-selector"]
+        MODELS[("models/<br/>rl_seedK.pt, selector.joblib,<br/>meta + train hashes")]
+    end
+
+    RUN["runner.py<br/>paired instances, repeats,<br/>timing, leakage check, resume"]
+
+    subgraph RAW["results/raw/CAMPAIGN (append-only, then read-only)"]
+        RUNS[("runs.csv")]
+        TRACES[("ga_trace.csv<br/>rl_training.csv<br/>selector_decisions.csv")]
+        MAN[("manifest.json")]
+    end
+
+    AN["analysis.py<br/>derived metrics, statistics"]
+
+    subgraph OUT["results/derived and results/figures"]
+        MASTER[("master.csv<br/>manual's 19 columns")]
+        TABLES[("summary tables")]
+        FIGS[("figures + source CSV")]
+    end
+
+    TESTS["tests/<br/>unit, property, integration,<br/>campaign validation"]
+
+    CFG --> WL
+    CFG --> RUN
+    CFG --> TRL
+    CFG --> TSEL
+    WL --> MODEL
+    MODEL --> HEUR
+    MODEL --> GA
+    MODEL --> RL
+    MODEL --> AD
+    HEUR --> SIM
+    GA --> SIM
+    RL --> SIM
+    AD --> HEUR
+    HEUR -. "seed individuals" .-> GA
+    HEUR -. "rollout baseline" .-> TRL
+    HEUR -. "labels" .-> TSEL
+    WL -- "train, val" --> TRL
+    WL -- "train" --> TSEL
+    TRL --> MODELS
+    TSEL --> MODELS
+    MODELS --> RL
+    MODELS --> AD
+    WL -- "test_id, test_ood" --> RUN
+    RUN --> HEUR
+    RUN --> GA
+    RUN --> RL
+    RUN --> AD
+    SIM --> VAL
+    VAL --> RUN
+    RUN --> RUNS
+    RUN --> TRACES
+    RUN --> MAN
+    TRL --> TRACES
+    RUNS --> AN
+    TRACES --> AN
+    MAN --> AN
+    AN --> MASTER
+    AN --> TABLES
+    AN --> FIGS
+    TESTS -.-> CORE
+    TESTS -.-> SCHED
+    TESTS -.-> RAW

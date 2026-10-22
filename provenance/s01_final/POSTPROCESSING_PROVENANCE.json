@@ -1,0 +1,68 @@
+{
+  "written_utc": "2026-10-17T06:50:50.362266+00:00",
+  "campaign_id": "20261017T044734Z-s01_final-430d8a10",
+  "raw_dir": "results/raw/20261017T044734Z-s01_final-430d8a10",
+  "raw_files": {
+    "ga_trace.csv": "61c3930ca9fedfa69f7e11e5d3d8c1d6549afaf7739fe5243a023997784fd5b4",
+    "manifest.json": "7439f4029223472d056e641ac59308c50a9ae552e926f706304e84d546e2b357",
+    "run.log": "1905bacd0505d85da3911820e6d47d52338157fa5c40a481a8e0ad28730a9fd9",
+    "runs.csv": "9a4a6afe437571462e5b0a1f3f20358724ee9d9b321905e37446d57b1c3d8b36"
+  },
+  "raw_read_only": true,
+  "config_file": "configs/s01_final.toml",
+  "config_sha256": "550007b6e5dd4a0444393e8543909d103c27bac80fbb953c7f68b6b1b239a8e5",
+  "execution_code_hash": "9a1f83786ce9df0b",
+  "analysis_code_hash": "a23e460502a1baf6",
+  "analysis_source_sha256": {
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "__main__.py": "53703f0355b1360f1aa2a814cca06a65a2e2632c0ccd09eaedaf8247ce36ad6f",
+    "analysis.py": "e61379ea52e775311d9a303b5a75bbb2e7109eb5208e384ef1324a1faa825852",
+    "ga.py": "466a21aa67c8ba68c6d30d2813c55b2bccd8d9b1cc0ed3b9ac7263efc39d5878",
+    "heuristics.py": "eb12e82b79bf33c001a0286695be85c277012cc061fe1d6268e451e7dbc54a93",
+    "model.py": "14e30e4671b6061aec66607a4e573a542a3caf1b4ae5ebafdbbc700d33fbbed3",
+    "runner.py": "c1e4f8d8dd6b2a4838fd3405557fa3c990422a668e6f4edc1cfb88667c2a871e",
+    "workloads.py": "59c748fee82f647d895f56047887c94885c0746768ba8a6103da85b6d42079c4"
+  },
+  "analysis_vs_execution_diff": "only schedlab/analysis.py differs; see EXECUTION_PROVENANCE.md",
+  "power": "battery during the campaign (see EXECUTION_PROVENANCE.md)",
+  "derived_files": {
+    "master.csv": "3873a78c7d382ae1d6df752bd9b0c649b0983d549a02f891eb3e8f798bca5cfb",
+    "s01_overhead_quality.csv": "ee8ee72c5933ba2c44b3de65f3a8879fb9fb3bb764c8e7dafb7a487b32478176",
+    "s01_paired.csv": "e10880cdec14f3e0137b5a215aefb20b25ca8c50a7a2bf5062a4aa9e849677a4",
+    "summary_by_algorithm.csv": "314290f511f19c3b5ac99ab9992289f80ce649f99fcc2fa7fcf69ecf9c24bbfd",
+    "timing_by_size.csv": "adefad74989abedecebf536a4f34188baf6f8f77fd646c29d0cce0cf4ba54e49"
+  },
+  "figure_files": {
+    "g1_makespan_vs_size.csv": "751cef5f69a277df7ae2b9eb6d4d65838ffec7eca031c631c1ac616bfd6a9010",
+    "g1_makespan_vs_size.pdf": "6cebfdae8aa0d43e52473055fbe38f1f4797eae201083f71193eb8b4f7559709",
+    "g1_makespan_vs_size.svg": "c0f699bb45b2b5844c790b6787b0d7c21a18cf5e482e624f24507a76790d4e70",
+    "g1_makespan_vs_size_instances.csv": "b224df86382653601ec31c59066cc1f8f2333149c368feb7e3dbdd87726fb8d7",
+    "g2_convergence.csv": "9965f2fb15b9f3fc01920cfe85f320af0afc76577331ce830cb994ec57043b32",
+    "g2_convergence.pdf": "5558c9d5ee9100fab77e2d43873967be9214503050fb2042ee9d10d43f21929d",
+    "g2_convergence.svg": "5cc83d72a9a3249cf6f6a17506ce7122068d82d8040a628142e653e21422e248",
+    "g2_convergence_runs.csv": "56c1e98acf9411ba28823939ebe4efd68d0d3b80f9aa39ad77e0e20eb2748678",
+    "g2_opt_time_vs_size.csv": "e6e7c895c39ad10048c7d7ce670cce9ceaf8f42623c9f6d7d4714ed9d808909a",
+    "g2_opt_time_vs_size.pdf": "0d51168d604a9d8a72a7250f5b14d25bbdbfa533da62032bfd6bc3240ed1e719",
+    "g2_opt_time_vs_size.svg": "2fa38ce4ff73730fdd8ffa1153933043ba6f5e274eb443a767f6659f6a78ffd8",
+    "g2_opt_time_vs_size_runs.csv": "18bff11227a517e1e4cc3e1236787b2e9ca6fd33a6ceb732a2ca8e04703e4074",
+    "g3_improvement_by_class.csv": "ffa4627fe26a4244389ebf1a6a820ef46bd9c3b7febaeafaed21a69f6e7da446",
+    "g3_improvement_by_class.pdf": "2427ad8761f6f844bbfda266d2858953cc1a92f9e44f9e58cb1e0e8bb4c1a214",
+    "g3_improvement_by_class.svg": "481f36e16d8526c8d37d5c98efc4c82f3f023f6b12493d7085bbe950b7104ec6",
+    "g3_improvement_by_class_instances.csv": "39b263988134468ee919ff7fbb29a4f19ca5ab492b36f5fef4b5e365702d9d97"
+  },
+  "provenance_files": {
+    "EXECUTION_PROVENANCE.md": "4ca90f4ee04409db2282212d8fd0275b34d664c80c26fb9a854080376ef196f6",
+    "figure_reproducibility_check.txt": "60c2949beeab517423cdfdba756e5ca817ce88af5a85c20c8a114b65debf07ef",
+    "verify_campaign.py": "ec8fee7150c0df48371deb0d3890465490c725eaf55454dfb684fef30f973f6d",
+    "verify_campaign_result.json": "18653e82af0bb33e9d3c20596b02bafd9435e948e60cb0bb8aa41e93bd987b41",
+    "write_postprocessing_provenance.py": "715500238ea30f6abcc490216855705db8f9f50e3ee02a25e13c24ad2b38a1c6"
+  },
+  "analysis_command": "python3 -m schedlab analyze results/raw/20261017T044734Z-s01_final-430d8a10",
+  "analysis_run_utc": "2026-10-17T06:47:01Z (10.5 s wall)",
+  "verify_command": "PYTHONPATH=. python3 provenance/s01_final/verify_campaign.py results/raw/20261017T044734Z-s01_final-430d8a10 results/derived/20261017T044734Z-s01_final-430d8a10 provenance/s01_final/verify_campaign_result.json (exit 0, 0 problems)",
+  "test_command": "python3 -m pytest -q",
+  "test_result": "exit 0; 201 passed, 0 failed, 0 skipped (run before analysis and again after doc edits)",
+  "campaign_checks": "all passed",
+  "report_sha256": "144e3b0a7b69c2867c1a405c5cf8c1025b9786d996b1c2af989413eb95611607",
+  "postprocess_writer": "provenance/s01_final/write_postprocessing_provenance.py"
+}

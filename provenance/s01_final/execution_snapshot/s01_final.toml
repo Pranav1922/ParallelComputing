@@ -1,0 +1,35 @@
+# S01 final campaign. LOCKED 2026-10-17 before any test-split evaluation; do not edit (tests/test_ga.py checks it).
+# [workload] and campaign seed are identical to full.toml, so instances are those of the full campaign.
+# [ga] is identical to ga_pilot.toml: the predeclared settings, untuned (decision of 2026-10-17: full GA primary,
+# three heuristic seeds, 6,000 evaluations). The four ablations/controls run on every test instance; the predeclared
+# reduced ablation set (n = 100, m = 4, test_id) is a subset of it.
+[campaign]
+name = "s01_final"
+seed = 20261011
+workers = 1
+notes = "single worker; host on battery power at launch (macOS power state recorded by operator)"
+
+[workload]
+sizes = [50, 100, 200]
+processors = [2, 4, 8]
+classes = ["regular", "irregular", "heterogeneous", "irregular_hetero"]
+instances = { train = 30, val = 5, test_id = 10, test_ood = 10 }   # per cell
+ood = ["ood_size", "ood_procs", "ood_struct", "ood_cv"]
+
+[run]
+splits = ["test_id", "test_ood"]
+algorithms = ["FCFS-EAT", "FCFS-EFT", "SPT-EFT", "LPT-EFT", "HEFT", "MINMIN",
+              "GA", "GA-UNSEEDED", "GA-KEYS-EFT", "RANDOM-SEARCH", "HILL-CLIMB"]
+timing_repeats = 3
+timeout_s = 600
+
+[ga]
+population = 60
+max_evals = 6000
+tournament = 3
+crossover_prob = 0.9
+key_sigma = 0.15
+mutations_per_chromosome = 1.0
+elite = 2
+seed_heuristics = ["HEFT", "MINMIN", "FCFS-EAT"]
+seeds = [0, 1, 2]

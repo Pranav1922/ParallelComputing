@@ -1,0 +1,41 @@
+{
+  "manifest_models": {
+    "model": "820ba281844c513e",
+    "model_ga": "6d83fac40cb5c6ed"
+  },
+  "expected_rows": 17550,
+  "actual_rows": 17550,
+  "instances_expected": 450,
+  "instances_actual": 450,
+  "methods": 13,
+  "status_counts": {
+    "ok": 17550
+  },
+  "rows_by_split": {
+    "test_id": 14040,
+    "test_ood": 3510
+  },
+  "heuristic_rerun_mismatches": 0,
+  "decision_rederive_mismatches": 0,
+  "ADAPTIVE_vs_SBS_test_id": {
+    "n": 360,
+    "n_nonzero": 18,
+    "mean_paired_improvement": -0.00015737973124063664,
+    "better": 6,
+    "tie": 342,
+    "worse": 12,
+    "gap_closed": -0.0289140325049857,
+    "wilcoxon_p": 0.7771175732880233
+  },
+  "ADAPTIVE_vs_SBS_test_ood": {
+    "n": 90,
+    "n_nonzero": 0,
+    "mean_paired_improvement": 0.0,
+    "better": 0,
+    "tie": 90,
+    "worse": 0,
+    "gap_closed": 0.0,
+    "wilcoxon_p": null
+  },
+  "problems": []
+}

@@ -1,0 +1,383 @@
+{
+  "expected_rows": 14850,
+  "actual_rows": 14850,
+  "instances_expected": 450,
+  "instances_actual": 450,
+  "rows_per_instance": 33,
+  "status_counts": {
+    "ok": 14850
+  },
+  "status_by_algorithm": {
+    "FCFS-EAT": {
+      "ok": 1350
+    },
+    "FCFS-EFT": {
+      "ok": 1350
+    },
+    "GA": {
+      "ok": 1350
+    },
+    "GA-KEYS-EFT": {
+      "ok": 1350
+    },
+    "GA-UNSEEDED": {
+      "ok": 1350
+    },
+    "HEFT": {
+      "ok": 1350
+    },
+    "HILL-CLIMB": {
+      "ok": 1350
+    },
+    "LPT-EFT": {
+      "ok": 1350
+    },
+    "MINMIN": {
+      "ok": 1350
+    },
+    "RANDOM-SEARCH": {
+      "ok": 1350
+    },
+    "SPT-EFT": {
+      "ok": 1350
+    }
+  },
+  "s01_fitness_evals_values": [
+    6000
+  ],
+  "heuristic_rerun_mismatches": 0,
+  "wilcoxon_GA_vs_BEST_HEURISTIC_test_id": {
+    "n": 360,
+    "n_nonzero": 283,
+    "p": 3.0214551893256564e-43
+  },
+  "wilcoxon_GA_vs_BEST_HEURISTIC_test_ood": {
+    "n": 90,
+    "n_nonzero": 60,
+    "p": 2.2141376721762463e-10
+  },
+  "wilcoxon_GA_vs_BEST_HEURISTIC_all": {
+    "n": 450,
+    "n_nonzero": 343,
+    "p": 6.2477471041600025e-52
+  },
+  "recomputed": [
+    {
+      "scope": "test_id",
+      "algorithm": "GA",
+      "baseline": "FCFS-EAT",
+      "n": 360,
+      "mean_paired_improvement": 0.196344994282904
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "GA",
+      "baseline": "HEFT",
+      "n": 360,
+      "mean_paired_improvement": 0.01757726918559732
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "GA",
+      "baseline": "BEST-HEURISTIC",
+      "n": 360,
+      "mean_paired_improvement": 0.013269189958747598
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "GA-KEYS-EFT",
+      "baseline": "FCFS-EAT",
+      "n": 360,
+      "mean_paired_improvement": 0.21357960783557065
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "GA-KEYS-EFT",
+      "baseline": "HEFT",
+      "n": 360,
+      "mean_paired_improvement": 0.04177390241710673
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "GA-KEYS-EFT",
+      "baseline": "BEST-HEURISTIC",
+      "n": 360,
+      "mean_paired_improvement": 0.037549576500409076
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "HILL-CLIMB",
+      "baseline": "FCFS-EAT",
+      "n": 360,
+      "mean_paired_improvement": 0.19324321283527687
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "HILL-CLIMB",
+      "baseline": "HEFT",
+      "n": 360,
+      "mean_paired_improvement": 0.013936411144460875
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "HILL-CLIMB",
+      "baseline": "BEST-HEURISTIC",
+      "n": 360,
+      "mean_paired_improvement": 0.009549011807190613
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "RANDOM-SEARCH",
+      "baseline": "FCFS-EAT",
+      "n": 360,
+      "mean_paired_improvement": 0.1856668839044797
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "RANDOM-SEARCH",
+      "baseline": "HEFT",
+      "n": 360,
+      "mean_paired_improvement": 0.00306611999574054
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "RANDOM-SEARCH",
+      "baseline": "BEST-HEURISTIC",
+      "n": 360,
+      "mean_paired_improvement": -0.001537597440218224
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "GA-UNSEEDED",
+      "baseline": "FCFS-EAT",
+      "n": 360,
+      "mean_paired_improvement": 0.08380935434713306
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "GA-UNSEEDED",
+      "baseline": "HEFT",
+      "n": 360,
+      "mean_paired_improvement": -0.13889068818974787
+    },
+    {
+      "scope": "test_id",
+      "algorithm": "GA-UNSEEDED",
+      "baseline": "BEST-HEURISTIC",
+      "n": 360,
+      "mean_paired_improvement": -0.1438565574995027
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "GA",
+      "baseline": "FCFS-EAT",
+      "n": 90,
+      "mean_paired_improvement": 0.1984147749492749
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "GA",
+      "baseline": "HEFT",
+      "n": 90,
+      "mean_paired_improvement": 0.007608207535350931
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "GA",
+      "baseline": "BEST-HEURISTIC",
+      "n": 90,
+      "mean_paired_improvement": 0.005391599325978384
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "GA-KEYS-EFT",
+      "baseline": "FCFS-EAT",
+      "n": 90,
+      "mean_paired_improvement": 0.20806647424314895
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "GA-KEYS-EFT",
+      "baseline": "HEFT",
+      "n": 90,
+      "mean_paired_improvement": 0.020720105335260506
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "GA-KEYS-EFT",
+      "baseline": "BEST-HEURISTIC",
+      "n": 90,
+      "mean_paired_improvement": 0.01855418825339891
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "HILL-CLIMB",
+      "baseline": "FCFS-EAT",
+      "n": 90,
+      "mean_paired_improvement": 0.1993583608410972
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "HILL-CLIMB",
+      "baseline": "HEFT",
+      "n": 90,
+      "mean_paired_improvement": 0.008958853185203532
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "HILL-CLIMB",
+      "baseline": "BEST-HEURISTIC",
+      "n": 90,
+      "mean_paired_improvement": 0.006776771563519389
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "RANDOM-SEARCH",
+      "baseline": "FCFS-EAT",
+      "n": 90,
+      "mean_paired_improvement": 0.19470789047696266
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "RANDOM-SEARCH",
+      "baseline": "HEFT",
+      "n": 90,
+      "mean_paired_improvement": 0.0017367119585839043
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "RANDOM-SEARCH",
+      "baseline": "BEST-HEURISTIC",
+      "n": 90,
+      "mean_paired_improvement": -0.0005466614119916864
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "GA-UNSEEDED",
+      "baseline": "FCFS-EAT",
+      "n": 90,
+      "mean_paired_improvement": -0.0058836538283584
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "GA-UNSEEDED",
+      "baseline": "HEFT",
+      "n": 90,
+      "mean_paired_improvement": -0.268730924221957
+    },
+    {
+      "scope": "test_ood",
+      "algorithm": "GA-UNSEEDED",
+      "baseline": "BEST-HEURISTIC",
+      "n": 90,
+      "mean_paired_improvement": -0.2724521843685928
+    },
+    {
+      "scope": "all",
+      "algorithm": "GA",
+      "baseline": "FCFS-EAT",
+      "n": 450,
+      "mean_paired_improvement": 0.19675895041617822
+    },
+    {
+      "scope": "all",
+      "algorithm": "GA",
+      "baseline": "HEFT",
+      "n": 450,
+      "mean_paired_improvement": 0.015583456855548038
+    },
+    {
+      "scope": "all",
+      "algorithm": "GA",
+      "baseline": "BEST-HEURISTIC",
+      "n": 450,
+      "mean_paired_improvement": 0.011693671832193754
+    },
+    {
+      "scope": "all",
+      "algorithm": "GA-KEYS-EFT",
+      "baseline": "FCFS-EAT",
+      "n": 450,
+      "mean_paired_improvement": 0.21247698111708632
+    },
+    {
+      "scope": "all",
+      "algorithm": "GA-KEYS-EFT",
+      "baseline": "HEFT",
+      "n": 450,
+      "mean_paired_improvement": 0.037563143000737494
+    },
+    {
+      "scope": "all",
+      "algorithm": "GA-KEYS-EFT",
+      "baseline": "BEST-HEURISTIC",
+      "n": 450,
+      "mean_paired_improvement": 0.03375049885100704
+    },
+    {
+      "scope": "all",
+      "algorithm": "HILL-CLIMB",
+      "baseline": "FCFS-EAT",
+      "n": 450,
+      "mean_paired_improvement": 0.19446624243644098
+    },
+    {
+      "scope": "all",
+      "algorithm": "HILL-CLIMB",
+      "baseline": "HEFT",
+      "n": 450,
+      "mean_paired_improvement": 0.012940899552609405
+    },
+    {
+      "scope": "all",
+      "algorithm": "HILL-CLIMB",
+      "baseline": "BEST-HEURISTIC",
+      "n": 450,
+      "mean_paired_improvement": 0.008994563758456368
+    },
+    {
+      "scope": "all",
+      "algorithm": "RANDOM-SEARCH",
+      "baseline": "FCFS-EAT",
+      "n": 450,
+      "mean_paired_improvement": 0.18747508521897627
+    },
+    {
+      "scope": "all",
+      "algorithm": "RANDOM-SEARCH",
+      "baseline": "HEFT",
+      "n": 450,
+      "mean_paired_improvement": 0.002800238388309213
+    },
+    {
+      "scope": "all",
+      "algorithm": "RANDOM-SEARCH",
+      "baseline": "BEST-HEURISTIC",
+      "n": 450,
+      "mean_paired_improvement": -0.0013394102345729165
+    },
+    {
+      "scope": "all",
+      "algorithm": "GA-UNSEEDED",
+      "baseline": "FCFS-EAT",
+      "n": 450,
+      "mean_paired_improvement": 0.06587075271203477
+    },
+    {
+      "scope": "all",
+      "algorithm": "GA-UNSEEDED",
+      "baseline": "HEFT",
+      "n": 450,
+      "mean_paired_improvement": -0.16485873539618967
+    },
+    {
+      "scope": "all",
+      "algorithm": "GA-UNSEEDED",
+      "baseline": "BEST-HEURISTIC",
+      "n": 450,
+      "mean_paired_improvement": -0.1695756828733207
+    }
+  ],
+  "ratio_of_aggregate_means_GA_vs_FCFS_all_NOT_A_PAIRED_STATISTIC": 0.2738753293153129,
+  "problems": []
+}

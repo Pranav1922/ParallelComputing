@@ -1,0 +1,298 @@
+{
+  "campaign_id": "20261017T080830Z-s03_pilot_ga-b259633d",
+  "config_file": "configs/s03_pilot_ga.toml",
+  "config": {
+    "campaign": {
+      "name": "s03_pilot_ga",
+      "seed": 20261011,
+      "workers": 1,
+      "notes": ""
+    },
+    "workload": {
+      "sizes": [
+        50,
+        100,
+        200
+      ],
+      "processors": [
+        2,
+        4,
+        8
+      ],
+      "classes": [
+        "regular",
+        "irregular",
+        "heterogeneous",
+        "irregular_hetero"
+      ],
+      "instances": {
+        "train": 30,
+        "val": 5,
+        "test_id": 10,
+        "test_ood": 10
+      },
+      "ood": [
+        "ood_size",
+        "ood_procs",
+        "ood_struct",
+        "ood_cv"
+      ]
+    },
+    "run": {
+      "splits": [
+        "val"
+      ],
+      "algorithms": [
+        "FCFS-EAT",
+        "FCFS-EFT",
+        "SPT-EFT",
+        "LPT-EFT",
+        "HEFT",
+        "MINMIN",
+        "ADAPTIVE",
+        "ADAPTIVE-TOP2",
+        "ADAPTIVE-NOGUARD",
+        "RANDOM-SELECT",
+        "TRY-ALL",
+        "ADAPTIVE-GA",
+        "GA-1000"
+      ],
+      "timing_repeats": 3,
+      "timeout_s": 600
+    },
+    "s03": {
+      "model": "results/models/s03_selector_v1",
+      "model_ga": "results/models/s03_selector_ga_v1",
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "config_hash": "b259633d",
+  "code_hash": "078f7be30a4d321d",
+  "git_commit": null,
+  "git_dirty": null,
+  "started_utc": "2026-10-17T08:08:30.900651+00:00",
+  "finished_utc": "2026-10-17T08:09:43.254950+00:00",
+  "hardware": {
+    "Apple_M4-10c-16GB": {
+      "cpu": "Apple M4",
+      "physical_cores": 10,
+      "ram_bytes": 17179869184,
+      "gpu": null,
+      "os": "macOS-27.2-arm64-arm-64bit",
+      "machine": "arm64"
+    }
+  },
+  "software": {
+    "python": "3.12.9 (v3.12.9:fdb81425a9a, Feb  4 2025, 12:21:36) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0",
+    "matplotlib": "3.10.8",
+    "pandas": "3.0.2",
+    "pytest": "9.1.1"
+  },
+  "runtime": {
+    "workers": 1,
+    "threads": 1,
+    "PYTHONHASHSEED": "unset"
+  },
+  "models": [
+    {
+      "model_id": "820ba281844c513e",
+      "path": "results/models/s03_selector_v1",
+      "role": "model",
+      "report": {
+        "model_id": "820ba281844c513e",
+        "train_instances": 1080,
+        "val_instances": 180,
+        "depth": 2,
+        "val_mean_regret_by_depth": {
+          "1": 0.006627098572710809,
+          "2": 0.005258032893530772,
+          "3": 0.010391202280744537,
+          "4": 0.011280718702172123,
+          "unlimited": 0.021113911098652655
+        },
+        "val_mean_regret_feature_ablation": {
+          "without_structure": 0.005258032893530772,
+          "without_work": 0.005298219711580716,
+          "without_heterogeneity": 0.006627098572710809
+        },
+        "val_mean_regret_adaptive": 0.005258032893530772,
+        "sbs": "HEFT",
+        "val_mean_cmax_over_lb": {
+          "FCFS-EAT": 1.6084845421870828,
+          "FCFS-EFT": 1.2539919715178722,
+          "LPT-EFT": 1.307152342862171,
+          "SPT-EFT": 1.4817526311323383,
+          "HEFT": 1.1765112144907135,
+          "MINMIN": 1.3931671568921464
+        },
+        "val_sbs_vbs_gap": 0.006627098572710809,
+        "contingency_threshold": 0.02,
+        "contingency_triggered": true,
+        "train_label_counts": {
+          "FCFS-EAT": 137,
+          "FCFS-EFT": 68,
+          "LPT-EFT": 37,
+          "SPT-EFT": 5,
+          "HEFT": 763,
+          "MINMIN": 70
+        },
+        "val_label_counts": {
+          "FCFS-EAT": 28,
+          "FCFS-EFT": 14,
+          "LPT-EFT": 8,
+          "SPT-EFT": 0,
+          "HEFT": 121,
+          "MINMIN": 9
+        },
+        "guard_margin": 0.1,
+        "rules": "|--- het_machine <= 0.48\n|   |--- work_skew <= 0.61\n|   |   |--- class: 4\n|   |--- work_skew >  0.61\n|   |   |--- class: 4\n|--- het_machine >  0.48\n|   |--- work_cv <= 0.63\n|   |   |--- class: 5\n|   |--- work_cv >  0.63\n|   |   |--- class: 4\n"
+      }
+    },
+    {
+      "model_id": "870ab53c17d01909",
+      "path": "results/models/s03_selector_ga_v1",
+      "role": "model_ga",
+      "report": {
+        "model_id": "870ab53c17d01909",
+        "extension_of": "820ba281844c513e",
+        "trigger": {
+          "rule": "val SBS-VBS gap < 2% (ALGORITHM_DESIGN 5.7)",
+          "val_sbs_vbs_gap": 0.006627098572710809,
+          "triggered": true
+        },
+        "ga_member": "GA-1000",
+        "ga_settings": {
+          "population": 60,
+          "max_evals": 1000,
+          "tournament": 3,
+          "crossover_prob": 0.9,
+          "key_sigma": 0.15,
+          "mutations_per_chromosome": 1.0,
+          "elite": 2,
+          "seed_heuristics": [
+            "HEFT",
+            "MINMIN",
+            "FCFS-EAT"
+          ]
+        },
+        "thetas": [
+          0.0,
+          0.005,
+          0.01,
+          0.02,
+          0.05
+        ],
+        "theta": 0.02,
+        "theta_table": {
+          "0.0": {
+            "depth": 4,
+            "train_ga_labels": 416,
+            "val_ga_labels": 62,
+            "val_ga_calls": 67,
+            "val_mean_regret_vs_vbs6": -0.002159182427895204,
+            "ga_call_efficiency": 0.00013113852239710468,
+            "val_regret_by_depth": {
+              "1": 0.003936432872816306,
+              "2": 0.002464621073048333,
+              "3": 0.002784485804845243,
+              "4": 0.002420423427054762
+            }
+          },
+          "0.005": {
+            "depth": 3,
+            "train_ga_labels": 171,
+            "val_ga_labels": 26,
+            "val_ga_calls": 29,
+            "val_mean_regret_vs_vbs6": -0.000992814769770845,
+            "ga_call_efficiency": 0.0002627556324993674,
+            "val_regret_by_depth": {
+              "1": 0.0036729552097250246,
+              "2": 0.0035874977456820537,
+              "3": 0.0033397194863445086,
+              "4": 0.0047792144768993945
+            }
+          },
+          "0.01": {
+            "depth": 1,
+            "train_ga_labels": 125,
+            "val_ga_labels": 21,
+            "val_ga_calls": 31,
+            "val_mean_regret_vs_vbs6": -0.0006595986270541198,
+            "ga_call_efficiency": 0.00023505474837951383,
+            "val_regret_by_depth": {
+              "1": 0.0034751778916644696,
+              "2": 0.009447229023406405,
+              "3": 0.00613260671754601,
+              "4": 0.005749764859505288
+            }
+          },
+          "0.02": {
+            "depth": 4,
+            "train_ga_labels": 87,
+            "val_ga_labels": 15,
+            "val_ga_calls": 14,
+            "val_mean_regret_vs_vbs6": 0.001962366872604256,
+            "ga_call_efficiency": 0.00033319512143618234,
+            "val_regret_by_depth": {
+              "1": 0.010657430852991258,
+              "2": 0.005861584171055085,
+              "3": 0.007139700675760474,
+              "4": 0.005789418050812301
+            }
+          },
+          "0.05": {
+            "depth": 2,
+            "train_ga_labels": 32,
+            "val_ga_labels": 3,
+            "val_ga_calls": 0,
+            "val_mean_regret_vs_vbs6": 0.005424995012642314,
+            "ga_call_efficiency": null,
+            "val_regret_by_depth": {
+              "1": 0.00839083482703743,
+              "2": 0.007188731266968935,
+              "3": 0.01384703233469098,
+              "4": 0.013079762358722383
+            }
+          }
+        },
+        "sbs": "HEFT",
+        "val_sbs_regret_vs_vbs6": 0.006627098572710809,
+        "ga_time_s_median_train": 0.09124843750032596,
+        "ga_time_s_median_val": 0.09224872948834673,
+        "val_ga_gain_over_best_heuristic": {
+          "mean": 0.0034603591876946455,
+          "share_strictly_better": 0.3111111111111111
+        },
+        "rules": "|--- het_machine <= 0.40\n|   |--- work_skew <= 0.63\n|   |   |--- het_machine <= 0.18\n|   |   |   |--- work_skew <= 0.52\n|   |   |   |   |--- class: 4\n|   |   |   |--- work_skew >  0.52\n|   |   |   |   |--- class: 0\n|   |   |--- het_machine >  0.18\n|   |   |   |--- par_ratio <= 2.34\n|   |   |   |   |--- class: 6\n|   |   |   |--- par_ratio >  2.34\n|   |   |   |   |--- class: 5\n|   |--- work_skew >  0.63\n|   |   |--- het_machine <= 0.38\n|   |   |   |--- cp_ratio <= 0.55\n|   |   |   |   |--- class: 4\n|   |   |   |--- cp_ratio >  0.55\n|   |   |   |   |--- class: 4\n|   |   |--- het_machine >  0.38\n|   |   |   |--- het_machine <= 0.38\n|   |   |   |   |--- class: 6\n|   |   |   |--- het_machine >  0.38\n|   |   |   |   |--- class: 4\n|--- het_machine >  0.40\n|   |--- work_skew <= 2.06\n|   |   |--- het_affinity <= 0.10\n|   |   |   |--- edge_density <= 2.06\n|   |   |   |   |--- class: 6\n|   |   |   |--- edge_density >  2.06\n|   |   |   |   |--- class: 1\n|   |   |--- het_affinity >  0.10\n|   |   |   |--- edge_density <= 1.72\n|   |   |   |   |--- class: 6\n|   |   |   |--- edge_density >  1.72\n|   |   |   |   |--- class: 4\n|   |--- work_skew >  2.06\n|   |   |--- edge_density <= 1.24\n|   |   |   |--- het_machine <= 0.60\n|   |   |   |   |--- class: 6\n|   |   |   |--- het_machine >  0.60\n|   |   |   |   |--- class: 1\n|   |   |--- edge_density >  1.24\n|   |   |   |--- work_skew <= 5.85\n|   |   |   |   |--- class: 4\n|   |   |   |--- work_skew >  5.85\n|   |   |   |   |--- class: 1\n",
+        "class_names": [
+          "FCFS-EAT",
+          "FCFS-EFT",
+          "LPT-EFT",
+          "SPT-EFT",
+          "HEFT",
+          "MINMIN",
+          "GA-1000"
+        ]
+      }
+    }
+  ],
+  "notes": "",
+  "split_counts": {
+    "train": 1080,
+    "val": 180,
+    "test_id": 360,
+    "test_ood": 90
+  },
+  "separation_checked": true,
+  "row_count": 7020,
+  "failed_count": 0,
+  "wall_time_s": 71.71248329197988
+}

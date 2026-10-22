@@ -1,0 +1,47 @@
+{
+  "model_id": "580faad134361f1a",
+  "seed": 0,
+  "ablation": false,
+  "features": [
+    "log_cost_vs_best_proc",
+    "cost_vs_task_mean",
+    "task_size",
+    "rank_u",
+    "outdegree",
+    "start_wait",
+    "finish_vs_best_candidate",
+    "idle_gap",
+    "ready_offset",
+    "fraction_placed",
+    "ready_per_proc",
+    "load_imbalance"
+  ],
+  "behaviour_cloning": false,
+  "settings": {
+    "lr": 0.0003,
+    "batch": 16,
+    "beta": 0.01,
+    "clip": 1.0,
+    "max_updates": 300,
+    "time_cap_s": 900.0,
+    "val_every": 50,
+    "hidden": 64,
+    "stream_seed": 20261017,
+    "stream_offset": 1000,
+    "bc_updates": 200
+  },
+  "insert": true,
+  "updates_done": 300,
+  "stop_reason": "max_updates",
+  "episodes": 4800,
+  "best_update": 300,
+  "best_val_rho": 1.2566124860243801,
+  "val_rho_update0": 5.392850332014408,
+  "learned_vs_update0": true,
+  "val_instances": 180,
+  "measured": {
+    "train_time_s": 97.35558375000255,
+    "power_at_start": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 52%; charging; 1:09 remaining present: true",
+    "power_at_end": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 55%; charging; 1:07 remaining present: true"
+  }
+}

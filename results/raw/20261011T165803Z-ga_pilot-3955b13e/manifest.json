@@ -1,0 +1,113 @@
+{
+  "campaign_id": "20261011T165803Z-ga_pilot-3955b13e",
+  "config_file": "configs/ga_pilot.toml",
+  "config": {
+    "campaign": {
+      "name": "ga_pilot",
+      "seed": 20261011,
+      "workers": 1,
+      "notes": ""
+    },
+    "workload": {
+      "sizes": [
+        20,
+        50,
+        100
+      ],
+      "processors": [
+        2,
+        4
+      ],
+      "classes": [
+        "regular",
+        "irregular",
+        "heterogeneous",
+        "irregular_hetero"
+      ],
+      "instances": {
+        "train": 2,
+        "val": 2
+      },
+      "ood": []
+    },
+    "run": {
+      "splits": [
+        "val"
+      ],
+      "algorithms": [
+        "FCFS-EAT",
+        "FCFS-EFT",
+        "SPT-EFT",
+        "LPT-EFT",
+        "HEFT",
+        "MINMIN",
+        "GA",
+        "GA-UNSEEDED",
+        "GA-KEYS-EFT",
+        "RANDOM-SEARCH",
+        "HILL-CLIMB"
+      ],
+      "timing_repeats": 3,
+      "timeout_s": 600
+    },
+    "ga": {
+      "population": 60,
+      "max_evals": 6000,
+      "tournament": 3,
+      "crossover_prob": 0.9,
+      "key_sigma": 0.15,
+      "mutations_per_chromosome": 1.0,
+      "elite": 2,
+      "seed_heuristics": [
+        "HEFT",
+        "MINMIN",
+        "FCFS-EAT"
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "config_hash": "3955b13e",
+  "git_commit": null,
+  "git_dirty": null,
+  "started_utc": "2026-10-11T16:58:03.109597+00:00",
+  "finished_utc": "2026-10-11T17:02:25.047731+00:00",
+  "hardware": {
+    "Apple_M4-10c-16GB": {
+      "cpu": "Apple M4",
+      "physical_cores": 10,
+      "ram_bytes": 17179869184,
+      "gpu": null,
+      "os": "macOS-27.2-arm64-arm-64bit",
+      "machine": "arm64"
+    }
+  },
+  "software": {
+    "python": "3.12.9 (v3.12.9:fdb81425a9a, Feb  4 2025, 12:21:36) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0",
+    "matplotlib": "3.10.8",
+    "pandas": "3.0.2",
+    "pytest": "9.1.1"
+  },
+  "runtime": {
+    "workers": 1,
+    "threads": 1,
+    "PYTHONHASHSEED": "unset"
+  },
+  "models": [],
+  "notes": "",
+  "split_counts": {
+    "train": 48,
+    "val": 48
+  },
+  "separation_checked": true,
+  "row_count": 1584,
+  "failed_count": 0,
+  "wall_time_s": 261.86385795800015
+}

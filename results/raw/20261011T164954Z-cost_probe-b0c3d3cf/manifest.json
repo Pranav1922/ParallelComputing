@@ -1,0 +1,85 @@
+{
+  "campaign_id": "20261011T164954Z-cost_probe-b0c3d3cf",
+  "config_file": "configs/cost_probe.toml",
+  "config": {
+    "campaign": {
+      "name": "cost_probe",
+      "seed": 20261011,
+      "workers": 1,
+      "notes": ""
+    },
+    "workload": {
+      "sizes": [
+        100,
+        200,
+        400
+      ],
+      "processors": [
+        4,
+        8
+      ],
+      "classes": [
+        "regular",
+        "irregular_hetero"
+      ],
+      "instances": {
+        "val": 1
+      },
+      "ood": []
+    },
+    "run": {
+      "splits": [
+        "val"
+      ],
+      "algorithms": [
+        "FCFS-EAT",
+        "FCFS-EFT",
+        "SPT-EFT",
+        "LPT-EFT",
+        "HEFT",
+        "MINMIN"
+      ],
+      "timing_repeats": 3,
+      "timeout_s": 60
+    }
+  },
+  "config_hash": "b0c3d3cf",
+  "git_commit": null,
+  "git_dirty": null,
+  "started_utc": "2026-10-11T16:49:54.471337+00:00",
+  "finished_utc": "2026-10-11T16:49:55.091795+00:00",
+  "hardware": {
+    "Apple_M4-10c-16GB": {
+      "cpu": "Apple M4",
+      "physical_cores": 10,
+      "ram_bytes": 17179869184,
+      "gpu": null,
+      "os": "macOS-27.2-arm64-arm-64bit",
+      "machine": "arm64"
+    }
+  },
+  "software": {
+    "python": "3.12.9 (v3.12.9:fdb81425a9a, Feb  4 2025, 12:21:36) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0",
+    "matplotlib": "3.10.8",
+    "pandas": "3.0.2",
+    "pytest": "9.1.1"
+  },
+  "runtime": {
+    "workers": 1,
+    "threads": 1,
+    "PYTHONHASHSEED": "unset"
+  },
+  "models": [],
+  "notes": "",
+  "split_counts": {
+    "val": 12
+  },
+  "separation_checked": true,
+  "row_count": 216,
+  "failed_count": 0,
+  "wall_time_s": 0.5621795830084011
+}

@@ -1,0 +1,51 @@
+{
+ "recorded": "2026-10-21 (documentation corrections, ERRATA items 7-13; Word drafts rebuilt with build_docx.py)",
+ "status": "DRAFT — identity placeholders unresolved; not a final export",
+ "note": "Document hashes of the report drafts and their sources. Separate from execution and campaign provenance under provenance/ and results/raw/, which is unchanged.",
+ "page_counts": {
+  "CS15_Integrated_Report_DRAFT.docx": 12,
+  "CS15_Individual_Technical_Note_DRAFT.docx": 3,
+  "CS15_Literature_Review_DRAFT.docx": 5,
+  "measured_with": "LibreOffice headless PDF render, 2026-10-21; Microsoft Word re-measurement pending"
+ },
+ "sha256": {
+  "docs/report/word/CS15_Individual_Technical_Note_DRAFT.docx": "5b7747286b34e6eee6c35c75178721c9c645dee05600b983ee9148c12e725334",
+  "docs/report/word/CS15_Integrated_Report_DRAFT.docx": "f5791bc1f4b2c3e8f15432b20d84f8e84747da8ddde0c3ece0175fc5d5b828cc",
+  "docs/report/word/CS15_Literature_Review_DRAFT.docx": "6138ead0fc360e4af711371e7b48c5845d960aa146f401d2f4e511f7ed3c1090",
+  "docs/report/CS15_Integrated_Report_DRAFT.md": "6c84c600bc141537cc0d7a90bd08473f55b177c7303d8ec348426e4849fbee03",
+  "docs/report/CS15_Individual_Technical_Note_DRAFT.md": "7fbdba69c7fdc90356c3c2f212209daff1251055d524d80c1b0cf072457573ab",
+  "docs/report/references.bib": "4d0be89f35b2d16793fd8fc766110f346d6319ac4aaf608f382301f252670179",
+  "docs/report/CITATION_VERIFICATION.md": "1f7d0f86f240c9d9d52ce4b39d762d58c61b86a6eb656ab1bb583f8424ce1f62",
+  "docs/report/COMPLIANCE_AUDIT.md": "a5812f5e1486137611f6ffde0d6b62331775bf5fdb548d682d12e9b215fb73f9",
+  "docs/report/ERRATA.md": "a8e4fa14b2f71d056ad1c5534c30f620ea092d81e4cf2616149e93da39dcb4b3",
+  "docs/report/SUBMISSION_CHECKLIST.md": "c18873f34cf8b72e6b81a5893939263a42f5d896dff184cac248f57e0da923d1",
+  "docs/report/build_docx.py": "6ba23ae4556b5315d9328010e831061317a00d7ade9efff697556555512a23aa",
+  "README.md": "9869fd1dccf7db3371dd3eee40699795379a0ddeef1cbacc8989b2fbb72530c7",
+  "docs/report/word/INDEX.md": "3f6a75ed1aa1def562fa41d7f83b1d57949ef6534d242e67eea3ecec9f997a9c",
+  "docs/report/TRACEABILITY.md": "281aeb7822a64f65b0e87380227b6e3352600faaf8ae58408432f178b433a4bf"
+ },
+ "previous": {
+  "recorded": "2026-10-18 (after M-E: C++/OpenMP results integrated; note table layout fixed; Word pages re-measured and PDFs inspected)",
+  "word_pages": {
+   "CS15_Integrated_Report_DRAFT.docx": 12,
+   "CS15_Individual_Technical_Note_DRAFT.docx": 3,
+   "CS15_Literature_Review_DRAFT.docx": 5
+  },
+  "sha256": {
+   "docs/report/word/CS15_Individual_Technical_Note_DRAFT.docx": "38d38e0d29fb63bfc321aff979ea4d0b79bb68b4ffe417a44955dd653ccfb80a",
+   "docs/report/word/CS15_Integrated_Report_DRAFT.docx": "163b391e8e8e19d992b7a32e6b9e4144267d96c35c9d06211d5199487a98cc88",
+   "docs/report/word/CS15_Literature_Review_DRAFT.docx": "5a7fc12ddbc07247c50852ba2d916183595ca693e8a8d718991e6b0039f710ac",
+   "docs/report/CS15_Integrated_Report_DRAFT.md": "6f5ad2732be7f27dfe675e1781c75d9c57dad0cc5b008d8abf8b011755c1f653",
+   "docs/report/CS15_Individual_Technical_Note_DRAFT.md": "0971035181e305db81fc8fa3025bd3bf973f5edce6ba5d0d60f4ddff0d97084d",
+   "docs/report/references.bib": "4d0be89f35b2d16793fd8fc766110f346d6319ac4aaf608f382301f252670179",
+   "docs/report/CITATION_VERIFICATION.md": "1f7d0f86f240c9d9d52ce4b39d762d58c61b86a6eb656ab1bb583f8424ce1f62",
+   "docs/report/COMPLIANCE_AUDIT.md": "fef269759de70bbf7818c76afd211fe9b47e93ad4c7f218e14fe97428bfcc685",
+   "docs/report/ERRATA.md": "5d2d31df781bd9bea6b605f6631fb9ac06e91cc270d923caa7185be9d30a95bc",
+   "docs/report/SUBMISSION_CHECKLIST.md": "5f0ffc979b4834e18a79adf1bebdee262b7b8ef07a875d89dbc929ccd45b2fee",
+   "docs/report/build_docx.py": "6ba23ae4556b5315d9328010e831061317a00d7ade9efff697556555512a23aa",
+   "README.md": "e975928df7c359915112071e6e9d0fee44b2f71e2ec4e1bdc8575ce4367fb063",
+   "docs/report/word/INDEX.md": "ea218434ca8c609d800075ba737e5cfed9e9880ed051ea2e30b0d784beb027fc",
+   "docs/report/TRACEABILITY.md": "281aeb7822a64f65b0e87380227b6e3352600faaf8ae58408432f178b433a4bf"
+  }
+ }
+}

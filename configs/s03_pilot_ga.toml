@@ -1,0 +1,31 @@
+# S03 pilot WITH THE CONTINGENCY EXTENSION (GA-1000 member, EXPERIMENTAL_METHODOLOGY 7.4). Identical to
+# s03_pilot.toml (which stays the primary six-heuristic reference) plus ADAPTIVE-GA and GA-1000.
+# Original header: trains the selector on the real `train` split (30 per cell) and chooses depth, SBS and the 5.7
+# contingency on the real `val` split (5 per cell), then runs every S03 method on `val` only. No test split is touched.
+# [workload] and seed equal full.toml, so the trained model is the one the full S03 campaign would use.
+# Pilot results on `val` are in-sample for the depth and SBS choice: pipeline evidence, not results.
+[campaign]
+name = "s03_pilot_ga"
+seed = 20261011
+workers = 1
+notes = ""
+
+[workload]
+sizes = [50, 100, 200]
+processors = [2, 4, 8]
+classes = ["regular", "irregular", "heterogeneous", "irregular_hetero"]
+instances = { train = 30, val = 5, test_id = 10, test_ood = 10 }   # per cell
+ood = ["ood_size", "ood_procs", "ood_struct", "ood_cv"]
+
+[run]
+splits = ["val"]
+algorithms = ["FCFS-EAT", "FCFS-EFT", "SPT-EFT", "LPT-EFT", "HEFT", "MINMIN",
+              "ADAPTIVE", "ADAPTIVE-TOP2", "ADAPTIVE-NOGUARD", "RANDOM-SELECT", "TRY-ALL",
+              "ADAPTIVE-GA", "GA-1000"]
+timing_repeats = 3
+timeout_s = 600
+
+[s03]
+model = "results/models/s03_selector_v1"
+model_ga = "results/models/s03_selector_ga_v2"   # contingency extension (methodology 7.4)
+seeds = [0, 1, 2]

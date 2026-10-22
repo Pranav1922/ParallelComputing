@@ -1,0 +1,57 @@
+# M-D: full measured C++/OpenMP execution replay. LOCKED before launch; do not edit.
+# Analysis plan and acceptance criteria: docs/MD_ANALYSIS_PLAN.md (written before launch).
+# Run once:  python -m schedlab.ompexec final --config configs/omp_exec_final.toml
+[campaign]
+name = "omp_exec_final"
+notes = "single run; no automatic rerun; integrity failures are reported, not repaired"
+
+[inputs]
+instances_config = "configs/s01_final.toml"     # [workload] + seed shared by all three accepted final campaigns
+split = "test_id"                                # 360 paired instances: 4 classes x n {50,100,200} x m {2,4,8} x 10
+calibration_dir = "results/raw/20261017T172332Z-omp_calibration-422f7f41"
+calibration_manifest = "results/raw/20261017T172332Z-omp_calibration-422f7f41/manifest.json"
+rederive_dir = "results/raw/20261017T162329Z-rederive-21e353a7"
+rederive_manifest = "results/raw/20261017T162329Z-rederive-21e353a7/manifest.json"
+
+[execution]
+reps = 10                       # timed repetitions per (instance, granularity, method)
+warmup = 2                      # untimed-for-analysis passes before them (rows kept, warmup = 1)
+granularities_us_per_tu = [10.0, 1.0, 0.1]   # mean task 100 sim_tu = 1 ms, 100 us, 10 us
+iters_per_tu = { "10.0" = 8130.952789113306, "1.0" = 813.0952789113305, "0.1" = 81.30952789113306 }  # from calibration
+modes = ["serial", "static", "tasks"]
+static_methods = ["FCFS-EAT", "HEFT", "GA#s0", "GA#s1", "GA#s2", "GA-KEYS-EFT#s0", "GA-KEYS-EFT#s1",
+                  "GA-KEYS-EFT#s2", "RL-S0", "RL-S1", "RL-S2", "ADAPTIVE", "TRY-ALL"]
+# Execution order (reproducible randomization against drift):
+#  instances: numpy default_rng(instance_order_seed).permutation(360)
+#  granularities within the k-th instance: default_rng([k, 7]).permutation([10.0, 1.0, 0.1])
+#  methods within each pass (2 warm-up + 10 timed passes): default_rng([int(instance_hash[:8], 16),
+#    round(g * 1000)]).permutation(15), a fresh permutation per pass
+instance_order_seed = 20261017
+verified_and_traced = "rep 0 of every (instance, granularity, method)"
+
+[omp]
+env = { OMP_DYNAMIC = "false", OMP_MAX_ACTIVE_LEVELS = "1" }
+wait_policy = "libgomp default: OMP_WAIT_POLICY and GOMP_SPINCOUNT unset (threads spin, then sleep); unchanged from the pilot"
+pinning = "none (macOS ignores OMP_PROC_BIND); threads may run on performance or efficiency cores"
+
+[expected]
+instances = 360
+rows = 194400          # 360 x 3 granularities x 15 methods x (2 warm-up + 10 timed)
+timed_rows = 162000    # 360 x 3 x 15 x 10
+verified_rows = 16200  # 360 x 3 x 15 (rep 0)
+trace_rows = 1890000   # sum of n over the 360 instances (42,000) x 3 x 15
+
+[lock.sha256]
+# sha256 of every file that defines the execution; filled in at lock time, checked by the driver at launch
+"cpp/ompexec.cpp" = "16ed6a0c8d5c72311b535a3ef2b907cb9265063b13acea3f7ea2ce27f0032adb"
+"cpp/schedsim.hpp" = "ef5a73c328468be1e51ca7e36502013299e96f9be1a03e2e205b7e9b6300ecdc"
+"cpp/Makefile" = "18102180bcf6481d5fc898c65da05cf5dfc5063a1e9978bbc4abddfee4b9177d"
+"cpp/build/ompexec" = "9f75380787b1e8c00148bb13987021c4f3222e1fde02a4cbffbde3f74ec6b0fa"
+"schedlab/ompexec.py" = "092519cee7b8d73afad9179162ef3c71cb3bb3ab7fe19022a719ab6027ced522"
+"schedlab/interop.py" = "bb51c5f1936a01d855aff4ff7e655da4553eb3138d00d640b053c61c4d2be582"
+"schedlab/heuristics.py" = "eb12e82b79bf33c001a0286695be85c277012cc061fe1d6268e451e7dbc54a93"
+"schedlab/model.py" = "14e30e4671b6061aec66607a4e573a542a3caf1b4ae5ebafdbbc700d33fbbed3"
+"schedlab/workloads.py" = "59c748fee82f647d895f56047887c94885c0746768ba8a6103da85b6d42079c4"
+"results/raw/20261017T172332Z-omp_calibration-422f7f41/manifest.json" = "ebe8923f963d7746251ca11b690b67e1fc2b16b9bc7450a043fa9ae51031aedc"
+"results/raw/20261017T162329Z-rederive-21e353a7/manifest.json" = "1c264697cb966b315c87168b3adb1d9ccbc88f6a1791ed83e0d9f31a9497eff2"
+"configs/s01_final.toml" = "550007b6e5dd4a0444393e8543909d103c27bac80fbb953c7f68b6b1b239a8e5"

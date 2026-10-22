@@ -1,0 +1,166 @@
+{
+  "campaign_id": "20261017T090101Z-s02_pilot-04ee0d92",
+  "config_file": "configs/s02_pilot.toml",
+  "config": {
+    "campaign": {
+      "name": "s02_pilot",
+      "seed": 20261011,
+      "workers": 1,
+      "notes": ""
+    },
+    "workload": {
+      "sizes": [
+        50,
+        100,
+        200
+      ],
+      "processors": [
+        2,
+        4,
+        8
+      ],
+      "classes": [
+        "regular",
+        "irregular",
+        "heterogeneous",
+        "irregular_hetero"
+      ],
+      "instances": {
+        "train": 30,
+        "val": 5,
+        "test_id": 10,
+        "test_ood": 10
+      },
+      "ood": [
+        "ood_size",
+        "ood_procs",
+        "ood_struct",
+        "ood_cv"
+      ]
+    },
+    "s02_train": {
+      "max_updates": 300,
+      "time_cap_s": 900.0,
+      "val_every": 50
+    },
+    "run": {
+      "splits": [
+        "val"
+      ],
+      "algorithms": [
+        "FCFS-EAT",
+        "FCFS-EFT",
+        "SPT-EFT",
+        "LPT-EFT",
+        "HEFT",
+        "MINMIN",
+        "RL-PILOT"
+      ],
+      "timing_repeats": 3,
+      "timeout_s": 600
+    },
+    "s02": {
+      "models": {
+        "RL-PILOT": "results/models/s02_pilot_seed0"
+      }
+    }
+  },
+  "config_hash": "04ee0d92",
+  "code_hash": "939d930e96cebafe",
+  "git_commit": null,
+  "git_dirty": null,
+  "started_utc": "2026-10-17T09:01:01.677703+00:00",
+  "finished_utc": "2026-10-17T09:01:09.253647+00:00",
+  "hardware": {
+    "Apple_M4-10c-16GB": {
+      "cpu": "Apple M4",
+      "physical_cores": 10,
+      "power_at_start": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 57%; charging; 1:03 remaining present: true",
+      "ram_bytes": 17179869184,
+      "gpu": null,
+      "os": "macOS-27.2-arm64-arm-64bit",
+      "machine": "arm64"
+    }
+  },
+  "software": {
+    "python": "3.12.9 (v3.12.9:fdb81425a9a, Feb  4 2025, 12:21:36) [Clang 13.0.0 (clang-1300.0.29.30)]",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.8.0",
+    "torch": "2.11.0",
+    "matplotlib": "3.10.8",
+    "pandas": "3.0.2",
+    "pytest": "9.1.1"
+  },
+  "runtime": {
+    "workers": 1,
+    "threads": 1,
+    "PYTHONHASHSEED": "unset"
+  },
+  "models": [
+    {
+      "model_id": "580faad134361f1a",
+      "path": "results/models/s02_pilot_seed0",
+      "role": "RL-PILOT",
+      "report": {
+        "model_id": "580faad134361f1a",
+        "seed": 0,
+        "ablation": false,
+        "features": [
+          "log_cost_vs_best_proc",
+          "cost_vs_task_mean",
+          "task_size",
+          "rank_u",
+          "outdegree",
+          "start_wait",
+          "finish_vs_best_candidate",
+          "idle_gap",
+          "ready_offset",
+          "fraction_placed",
+          "ready_per_proc",
+          "load_imbalance"
+        ],
+        "behaviour_cloning": false,
+        "settings": {
+          "lr": 0.0003,
+          "batch": 16,
+          "beta": 0.01,
+          "clip": 1.0,
+          "max_updates": 300,
+          "time_cap_s": 900.0,
+          "val_every": 50,
+          "hidden": 64,
+          "stream_seed": 20261017,
+          "stream_offset": 1000,
+          "bc_updates": 200
+        },
+        "insert": true,
+        "updates_done": 300,
+        "stop_reason": "max_updates",
+        "episodes": 4800,
+        "best_update": 300,
+        "best_val_rho": 1.2566124860243801,
+        "val_rho_update0": 5.392850332014408,
+        "learned_vs_update0": true,
+        "val_instances": 180,
+        "measured": {
+          "train_time_s": 97.35558375000255,
+          "power_at_start": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 52%; charging; 1:09 remaining present: true",
+          "power_at_end": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 55%; charging; 1:07 remaining present: true"
+        }
+      }
+    }
+  ],
+  "notes": "",
+  "split_counts": {
+    "train": 1080,
+    "val": 180,
+    "test_id": 360,
+    "test_ood": 90
+  },
+  "separation_checked": true,
+  "row_count": 3780,
+  "failed_count": 0,
+  "wall_time_s": 6.89672670798609,
+  "power_at_end": "Now drawing from 'AC Power' -InternalBattery-0 (id=35520611) 58%; charging; 1:03 remaining present: true"
+}
